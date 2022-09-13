@@ -18,40 +18,10 @@ td {background: red}
 
 a {background: yellow}
 
-body
-{margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-
-.galeria{
-
-padding: 16px;
-}
-.imagenes img{
-width: 100%;
-object-fit: cover;
+img{
+margin: auto;
 display: block;
-}
-
-
-.vista-rincipal img{
-    width: 100%;
-object-fit: cover;
-width: 80px;
-height: 80px;
-margin-right: 10px;
-}
-
-.vista-rincipal img{
-display: flex;
-overflow-y: auto;
-}
-
-
-
-.prueba1{border: 
-    1px;
-
+width: 600px;
+height: 600px;
+border: 10px solid green;
 }
