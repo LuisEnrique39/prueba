@@ -1,0 +1,57 @@
+table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    
+    border: 1px solid #000;
+ }
+
+
+ th, td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid rebeccapurple;
+ }
+th {background: blue}
+
+td {background: red}
+
+a {background: yellow}
+
+body
+{margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+.galeria{
+
+padding: 16px;
+}
+.imagenes img{
+width: 100%;
+object-fit: cover;
+display: block;
+}
+
+
+.vista-rincipal img{
+    width: 100%;
+object-fit: cover;
+width: 80px;
+height: 80px;
+margin-right: 10px;
+}
+
+.vista-rincipal img{
+display: flex;
+overflow-y: auto;
+}
+
+
+
+.prueba1{border: 
+    1px;
+
+}
