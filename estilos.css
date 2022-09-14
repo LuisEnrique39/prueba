@@ -1,27 +1,40 @@
+
+body{
+margin: 0%;
+font-family: Verdana;
+}
+
+header{
+    background: #1d4a96;
+    color: white;
+border: 1px solid #1d4a96;
+}
 table {
-    border-collapse: separate;
-    border-spacing: 5px;
+
     
-    border: 1px solid #000;
- }
+    border: 15px solid #1d4a96;
+    
+background-color:  green;
+transition-property: border;
+transition-duration: 5s;
+}
+
+td, th{
+padding: 5px 10px;
+}
+
+main{
+
+    padding: 1em 2em;
+}
+@media ( max-width: 30em ){ /*30 x 16px = 480px*/
 
 
- th, td {
-    width: 25%;
-    text-align: left;
-    vertical-align: top;
-    border: 1px solid rebeccapurple;
- }
-th {background: blue}
+table tr {
+display: flex;
 
-td {background: red}
 
-a {background: yellow}
 
-img{
-margin: auto;
-display: block;
-width: 600px;
-height: 600px;
-border: 10px solid green;
+}
+
 }
