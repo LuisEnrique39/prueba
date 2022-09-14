@@ -38,3 +38,24 @@ display: flex;
 }
 
 }
+table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    
+    border: 1px solid #1d4a96;
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
