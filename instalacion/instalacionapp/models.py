@@ -1,7 +1,11 @@
+from importlib.resources import contents
+from sqlite3 import Timestamp
+from time import time, timezone
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
 # Create your models here.
+
 class propiedades(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True, null=True)    
     id_propiedad = models.CharField(max_length=250, null=True)
