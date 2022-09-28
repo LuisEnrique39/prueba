@@ -1,0 +1,27 @@
+{% extends 'social/layout.html' %}
+{% load humanize %} 
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+
+
+<article>
+    <div class="container-article">
+        <img src="{% static 'img/1.png' %}">
+        <div>
+            <h2 class="username prueba"><a href="#">@luis</a></h2>
+            <i class="clock"></i>
+            <time data-time="#">Prueba</time>
+            <div class="post">Hola luis</div>
+        </div>
+    </div>
+</article>
+<style>
+    .prueba{
+        background-color: red;
+    }
+</style>
+
+
+{% endblock %}

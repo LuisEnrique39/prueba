@@ -6,7 +6,8 @@ from django.contrib.auth.models import User
 from django.db.models.deletion import CASCADE
 # Create your models here.
 
-class propiedades(models.Model):
+
+class Post(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True, null=True)    
     id_propiedad = models.CharField(max_length=250, null=True)
     tipo_propiedad = models.CharField(max_length=250, null=True)
@@ -17,3 +18,5 @@ class propiedades(models.Model):
     n_habitaciones = models.CharField(max_length=250, null=True)
     estado_habitaciones = models.CharField(max_length=250, null=True)
     disponible = models.BooleanField(default=True,null=True) 
+
+
