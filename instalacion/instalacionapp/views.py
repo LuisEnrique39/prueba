@@ -1,4 +1,5 @@
 
+from re import template
 from django.shortcuts import render, redirect
 from .models import *
 from .models import Post
@@ -50,6 +51,28 @@ def login(request):
 def retorno(request):
  
   return render(request, 'social/prueba.html')
- 
+
+def contacto(request):
+  template = 'instalacionapp/contacto.html'
+  if request.method == 'POST':  
+       
+        dato = Post.objects.create(
+          
+                user_id=request.POST['usuario'], 
+                id_propiedad=request.POST['id_propiedad'], 
+                tipo_propiedad=request.POST['tipo_propiedad'], 
+                ubicacion=request.POST['ubicacion'], 
+                metros_cuadrados=request.POST['metros_cuadrados'], 
+                renta_o_venta=request.POST['renta_o_venta'], 
+                precio=request.POST['precio'], 
+                n_habitaciones=request.POST['n_habitaciones'],  
+                estado_habitaciones=request.POST['estado_habitaciones'], 
+                disponible=request.POST['disponible'], 
+
+          )
+        dato.save()
+  return render(request, 'social/contacto.html')
+
+     
     
 

@@ -1,0 +1,190 @@
+{% extends 'social/layout.html' %}
+{% block content%}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <title>Document</title>
+</head>
+<style>
+  body {
+    background: green;
+  }
+
+  button {
+    background-color: yellow;
+  }
+
+  h1 {
+    background-color: yellow;
+  }
+
+  label {
+    border-bottom: red;
+  }
+</style>
+
+<body>
+  <div class="container" style="background-color: green;">
+    <!-- Formulario-->
+    <!-- <section class="form-register"> -->
+    <form class="form-register">
+      {% csrf_token %}
+      <div class="info">
+        <h1 class="titt"> Contactanos</h1>
+        <nav class="second-nav">
+          <a class="feed" href="{% url 'feed' %}">REGRESAR</a>
+
+
+        </nav>
+        <font size="6" face="Arial black">
+          <p>BIENVENIDOS</p>
+        </font>
+      </div>
+
+      <div class="elementos">
+        <!-- campos a llenar -->
+        <div class="elementosForm">
+          <font size="5" face="Arial">
+            <label class="etiquetaForm">Usuario* </label>
+            <input class="controllers" type="hidden" name="user" id="userField" placeholder="Ingrese su usuario"
+              required>
+            </p>
+          </font>
+          <font size="5" face="Arial black">
+            <p>
+              <label class="etiquetaForm">id_propiedad</label>
+              <input class="controllers" type="text" name="asa" id="asaField" placeholder=" id propiedad" required>
+            </p>
+          </font>
+          <font size="5" face="Arial black">
+            <p>
+              <label class="etiquetaForm">tipo_propiedad</label>
+              <input class="controllers" type="text" name="a" id="aField" placeholder="Ingrese su apellido" required>
+            </p>
+          </font>
+
+          <font size="5" face="Arial black">
+            <p>
+              <label class="etiquetaForm">ubicacion</label>
+              <input class="controllers" type="text" name="b" id="bField" placeholder="Ingrese su correo" required>
+            </p>
+          </font>
+
+          <font size="5" face="Arial black">
+            <p>
+              <label class="etiquetaForm">metros_cuadrados</label>
+              <input class="controllers" type="text" name="c" id="cField" placeholder="Ingrese su telefono" )" required>
+            </p>
+          </font>
+
+          <font size="5" face="Arial black">
+            <p>
+              <label class="etiquetaForm">renta_o_venta</label>
+              <input class="controllers" type="text" name="d" id="dField" placeholder="Ingrese el nombre de empresa"
+                required>
+            </p>
+          </font>
+
+          <font size="5" face="Arial black">
+            <p>
+              <label class="etiquetaForm">precio</label>
+              <input class="controllers" type="text" name="e" id="eField" placeholder="Ingrese su cargo" required>
+            </p>
+          </font>
+
+          <font size="5" face="Arial black">
+
+            <p>
+              <label class="etiquetaForm">n_habitaciones</label>
+              <input class="controllers" type="text" name="f" id="fField" placeholder="Ingrese su cargo" required>
+            </p>
+          </font>
+
+          <font size="5" face="Arial black">
+            <p>
+              <label class="etiquetaForm">estado_habitaciones</label>
+              <input class="controllers" type="text" name="g" id="gField" placeholder="Ingrese su cargo" required>
+            </p>
+
+            <p>
+
+              <label for="liderField">¿Es lider?</label>
+              <select name="disponible" id="liderField">
+                <option value="True">Si</option>
+                <option value="False">No</option>
+
+              </select>
+
+
+
+            </p>
+
+        </div>
+        <!-- fin campos a llenar -->
+
+
+
+        <!-- <input class="buttons" type="submit" value="Contactanos"> -->
+        <button class="buttons" type="submit" onclick="datos()" style="color: blue"> Enviar </button>
+
+      </div>
+
+
+    </form>
+    <!-- </section> -->
+    <!-- Fin Formulario-->
+
+    <!-- Fin contenedor -->
+  </div>
+  <script>
+    function datos() {
+
+      $.ajax({
+        url: "{% url 'contacto' %}",
+        type: "POST",
+        data: {
+
+          'usuario': $('#userField').val(),
+          'id_propiedad': $('#asaField').val(),
+          'tipo_propiedad': $('#aField').val(),
+          'ubicacion': $('#bField').val(),
+          'metros_cuadrados': $('#cField').val(),
+          'renta_o_venta': $('#dField').val(),
+          'precio': $('#eField').val(),
+          'n_habitaciones': $('#fField').val(),
+          'estado_habitaciones': $('#gField').val(),
+          'disponible': $('#liderField').val(),
+
+          csrfmiddlewaretoken: '{{ csrf_token }}',
+        },
+        success: function (data) {
+          console.log(data)
+          console.log("Success");
+          window.location.href = "{% url 'contacto' %}";
+
+
+        },
+
+        error: function () {
+          alert('Hubo algún error al realizar la llamada AJAX!');
+        }
+      });
+
+
+
+
+    }
+
+  </script>
+</body>
+
+</html>
+{% endblock %}
