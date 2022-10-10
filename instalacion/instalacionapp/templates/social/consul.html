@@ -1,0 +1,88 @@
+{% extends 'social/layout.html' %}
+{% load static%}
+{% block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <main>
+
+
+    <div class="info">
+        <h1 class="titt"> Consultas de datos de personal</h1>
+        <nav class="second-nav">
+            <a class="feed" href="{% url 'feed' %}">REGRESAR</a>
+       
+          </nav>
+       
+      </div>
+   
+
+  
+  
+  
+    <table class="table table-bordered"  > 
+      <thead>
+        <tr style="border: 2px solid black;">
+      
+          <th>id</th>
+      
+          <th>id_propiedad</th>
+      
+          <th>tipo_propiedad</th>
+
+          <th>ubicacion</th>
+
+          <th>metros_cuadrados</th>
+
+          <th>renta_o_venta</th>
+      
+          <th>precio</td>
+
+          <th>n_habitaciones</th>
+
+          <th>estado_habitaciones</th>
+     
+          <th>disponible</th>
+      
+        </tr>
+      </thead>
+
+
+      <tbody>
+        {% if posts %}
+        {% for info in posts %}
+        <tr>
+
+            <td>{{info.id}}</td>
+            <td>{{info.id_propiedad}}</td>
+            <td>{{info.tipo_propiedad}}</td>
+            <td>{{info.ubicacion}}</td>
+            <td>{{info.metros_cuadrados}}</td>
+            <td>{{info.renta_o_venta}}</td>
+            <td>{{info.precio}}</td>
+            <td>{{info.n_habitaciones}}</td>
+            <td>{{info.estado_habitaciones}}</td>
+            <td>{{info.disponible}}</td>
+            
+
+       
+        </tbody>
+        {% endfor %}
+
+        {% else %}
+
+        <h1>NO HAY REGISTROS</h1>
+
+        {% endif %}
+      </main>
+      </table>
+</body>
+</html>
+{% endblock %}

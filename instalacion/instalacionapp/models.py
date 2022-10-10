@@ -20,3 +20,10 @@ class Post(models.Model):
     disponible = models.BooleanField(default=True,null=True) 
 
 
+class Usuario(models.Model):
+    nombre = models.CharField(max_length=250, null=True)
+    apellidos = models.CharField(max_length=250, null=True)
+    fecha = models.CharField(max_length=250, null=True)
+    asunto = models.CharField(max_length=250, null=True)
+    correo = models.CharField(max_length=250, null=True)
+    comentarios = models.CharField(max_length=250, null=True)
