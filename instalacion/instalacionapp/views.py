@@ -139,9 +139,9 @@ def compras(request):
 
 def consultati(request):
     
-    informa = tienda.objects.all()
-  
-    context= {'me': informa}
+    ejemplo = tienda.objects.all()
+
+    context= {'me': ejemplo}
 
 
     return render(request, 'social/consultatienda.html', context)

@@ -101,6 +101,7 @@
             /* Green */
             color: white;
         }
+
     </style>
     
 </head>
@@ -112,110 +113,125 @@
         {% csrf_token %}
 
         <center><font size="5" face="Arial black"><h1>TIENDA</h1></font></center>
+        <center>
         <p>
             <label class="etiquetaForm"></label>
             <input class="controllers" value="{{user.id}}" type="hidden" name="user" id="userField"
                 placeholder="Ingrese su usuario" onkeypress="return ch(event)" required>
         </p>
         <p>
-            <label class="etiquetaForm">Nombre*</label>
+            <label class="etiquetaForm">Nombre</label>
             <input class="controllers" type="text" name="user" id="nombreField" placeholder="Ingrese su usuario"
                 onkeypress="return ch(event)" required>
         </p>
         <p>
-            <label class="etiquetaForm">Apellidos* </label>
+            <label class="etiquetaForm">Apellidos </label>
             <input class="controllers" type="text" name="apellido" id="apellidoField" placeholder="Ingrese su apellido"
                 onkeypress="return ch(event)" required>
         </p>
         <p>
-            <label class="etiquetaForm">Correo* </label>
+            <label class="etiquetaForm">Correo</label>
             <input class="controllers" type="email" name="correo" id="correoField" placeholder="Ingrese tu correo"
                 onkeypress="return ch(event)" required>
         </p>
         <p>
-            <label class="etiquetaForm">Numero* </label>
+            <label class="etiquetaForm">Numero </label>
             <input class="controllers" type="text" name="Numero" id="numeroField" placeholder="Ingrese su numero"
                 onkeypress="return ch(event)" required>
         </p>
         <p>
-            <label for="pagoField">metodo de pago</label>
+            <label for="pagoField">comprar</label>
             <select name="metodo_pago" id="pagoField">
-                <option value="True">tarjeta</option>
-                <option value="False">efectivo</option>
+                <option value="True">si</option>
+                <option value="False">no</option>
 
             </select>
 
 
 
-        </p>
+</p>
+
         <button id="checkout" type="submit" class="button-checkout" onclick="pay()" >Pagar</button>
 
     </div>
+</center>
+        
     <div class="page-content" id="producto">
         <div class="product-container" id="producto1" onkeypress="return ch(event)" required >
-            <h3>nombre</h3>  
-            <img src="{% static 'img/limon.jpg' %}" alt="">
-            <h1>$5</h1>
-                <button class="button-add" onclick="add('product-1', 5)" onkeypress="return ch(event)" required >Agregar</button>
+            <h3>Paleta De Limon</h3>  
+            <img src="{% static 'img/limon.jpg' %}"width="410" height="410" />
+            <h1>$10</h1>
+                <button class="button-add" onclick="add('product-1', 10)" onkeypress="return ch(event)" required >Agregar</button>
         </div>
 
         <div class="product-container" id="producto2">
-            <h3>nombre</h3>  
-            <img src="{% static 'img/chocloate.jpg' %}" alt="">
-            <h1>$5</h1>
-                    <button class="button-add" onclick="add('product-2', 5)">Agregar</button>
+            <h3>Paleta De Chicle</h3>  
+            <img src="{% static 'img/chicle.png' %}"width="410" height="410" />
+            <h1>$10</h1>
+                    <button class="button-add" onclick="add('product-2', 10)">Agregar</button>
         </div>
 
         <div class="product-container">
-            <h3>nombre</h3>  
-            <img src="{% static 'img/12.jpg' %}" alt="">
-            <h1>$5</h1>
-                    <button class="button-add" onclick="add('product-3', 5)">Agregar</button>
+            <h3>Paleta De Grosella</h3>  
+            <img src="{% static 'img/grosella.jpg' %}"width="410" height="410" />
+            <h1>$10</h1>
+                    <button class="button-add" onclick="add('product-3', 10)">Agregar</button>
         </div>
 
         <div class="product-container">
-            <h3>nombre</h3>  
-            <img src="{% static 'img/12.jpg' %}" alt="">
-            <h1>$5</h1>
-                <button class="button-add" onclick="add('product-4', 5)">Agregar</button>
+            <h3>Paleta De Guayaba</h3>  
+            <img src="{% static 'img/guayaba.jpg' %}"width="410" height="410" />
+            <h1>$10</h1>
+                <button class="button-add" onclick="add('product-4', 10)">Agregar</button>
         </div>
 
         <div class="product-container">
-            <h3>nombre</h3>  
-            <img src="{% static 'img/12.jpg' %}" alt="">
-            <h1>$5</h1>
-            <button class="button-add" onclick="add('product-5', 5)">Agregar</button>
+            <h3>Paleta De Mango</h3>  
+            <img src="{% static 'img/mango.jpg' %}"width="410" height="410" />
+            <h1>$10</h1>
+            <button class="button-add" onclick="add('product-5', 10)">Agregar</button>
         </div>
 
         <div class="product-container">
-            <h3>nombre</h3>  
-            <img src="{% static 'img/12.jpg' %}" alt="">
-            <h1>$5</h1>
-                <button class="button-add" onclick="add('product-6', 5)">Agregar</button>
+            <h3>Paleta De Uva</h3>  
+            <img src="{% static 'img/uva.jpg' %}"width="410" height="410" />
+            <h1>$10</h1>
+                <button class="button-add" onclick="add('product-6', 10)">Agregar</button>
         </div>
 
         <div class="product-container">
-            <h3>nombre</h3>  
-            <img src="{% static 'img/12.jpg' %}" alt="">
-            <h1>$5</h1>
-                <button class="button-add" onclick="add('product-7', 5)">Agregar</button>
+            <h3>Paleta De Galleta</h3>  
+            <img src="{% static 'img/galleta.png' %}"width="410" height="410" />
+            <h1>$15</h1>
+                <button class="button-add" onclick="add('product-7', 15)">Agregar</button>
         </div>
 
         <div class="product-container">
-            <h3>nombre</h3>  
-            <img src="{% static 'img/12.jpg' %}" alt="">
-            <h1>$5</h1>
-                        <button class="button-add" onclick="add('product-8', 5)">Agregar</button>
+            <h3>Paleta De Pistache</h3>  
+            <img src="{% static 'img/pistache.jpg' %}"width="410" height="410" />
+            <h1>$15</h1>
+                        <button class="button-add" onclick="add('product-8', 15)">Agregar</button>
         </div>
-
-      
+        <div class="product-container">
+            <h3>Paleta De Queso</h3>  
+            <img src="{% static 'img/queso.png' %}"width="410" height="410" />
+            <h1>$15</h1>
+                        <button class="button-add" onclick="add('product-8', 15)">Agregar</button>
+        </div>
+    
 
 
 
 
 
     </div>
-
+    <br>
+        <br>
+        <br>
+<br>
+<br>
+<br>
+              
     <script>
         let products = [];
         let total = 0;
