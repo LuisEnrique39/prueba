@@ -17,5 +17,8 @@ urlpatterns = [
     re_path('^carrusel/$' , views.carrusel, name="carrusel"),
     re_path('^consultas/$' , views.consulta, name="consul"),
     re_path('^correo/$' , views.correo, name="ema"),
+    re_path('^tienda/$' , views.compras, name="tienda"),
+    re_path('^consulta/$' , views.consultati, name="consultatienda"),
+
 
 ]

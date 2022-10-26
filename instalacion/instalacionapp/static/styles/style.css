@@ -1,145 +1,145 @@
-body{
-	background: green;
-	font-size: 62.5%;
-	font-family: 'Varela Round', Helvetica, Arial, serif;
+body {
+  background: white;
+  font-size: 62.5%;
+  font-family: 'Varela Round', Helvetica, Arial, serif;
 }
+
 /* Global Styles*/
-h1{
-color: black;
+h1 {
+  color: black;
 }
 
-h2{
-  color: yellow
-}
-
-h5{
-	font-size: 1rem;
-	margin-bottom: 0;
+h2 {
+  color: black;
 
 }
 
-p{
-	font-size: 1rem;
-}
-
-button{
-	font-size: 1rem;
-	color: yellow;
-	padding: 0.4rem 1.4rem;
-	border: none;
-	background: #7A9D96;
-	 border-radius: 4px;
-	cursor: pointer;
+h5 {
+  font-size: 1rem;
+  margin-bottom: 0;
 
 }
 
-img{
-	object-fit: cover;
+p {
+  font-size: 1rem;
+}
+
+button {
+  font-size: 1rem;
+  color: white;
+  padding: 0.4rem 1.4rem;
+  border: none;
+  background: #7A9D96;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+img {
+  object-fit: cover;
 }
 
 /* Nav bar */
-.main-head{
-	background: blue;
-	color: green;
+.main-head {
+  background: #f5ebf5;
+
+  ;
 }
 
-nav.main{
-	min-height: 7vh;
-	display: flex;
-	width: 65%;
-	margin: auto; 
-	align-items: center;
-	padding: 0.5rem;
+nav.main {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  background-color:#f5ebf5;
 }
 
-nav.main ul{
-	display: flex;
-	flex: 1 1 40rem;
-	justify-content: space-around;
-	align-items: center;
-	list-style: none;
+nav.main ul {
+  display: flex;
+  flex: 1 1 40rem;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
 }
 
-#logo{
-	flex: 2 1 40rem;
-    
+#logo {
+  flex: 2 1 40rem;
+  background-color: #f5ebf5;
 }
 
 /* -----*/
 
-a{
-	font-size: .93rem;
-	text-decoration: none;
-	color: black;
+a {
+  font-size: .93rem;
+  text-decoration: none;
+  color: black;
 }
 
 
-.main{
-	background: yellow;
-	width: 60%;
-	margin: 5% auto;
-	border-radius: 4px;
-	padding-bottom: 20px;
+.main {
+  background: white;
+  width: 60%;
+  margin: 5% auto;
+  border-radius: 4px;
+  padding-bottom: 20px;
 }
 
 /* NAVIGATION BAR */
-.second-nav{
-	display: flex;
-	padding: 15px 30px;
+.second-nav {
+  display: flex;
+  padding: 15px 30px;
 }
 
-.second-nav .feed{
-	flex: 1 1 30px;
+.second-nav .feed {
+  flex: 1 1 30px;
 }
 
-.second-nav .feed:hover{
-	flex: 1 1 30px;
-	color: grey;
+.second-nav .feed:hover {
+  flex: 1 1 30px;
+  color: grey;
 }
 
-.second-nav .profile{
-	flex: 1 1 30px;
+.second-nav .profile {
+  flex: 1 1 30px;
 }
 
-.second-nav .profile:hover{
-	flex: 1 1 30px;
-	color: grey;
+.second-nav .profile:hover {
+  flex: 1 1 30px;
+  color: grey;
 }
 
-.second-nav .new{
-	flex: 6 1 5rem;
-	text-align: right;
-	text-transform: uppercase;
-  	color: #7A9D96;
+.second-nav .new {
+  flex: 6 1 5rem;
+  text-align: right;
+  text-transform: uppercase;
+  color: #7A9D96;
 }
 
-.second-nav .new:hover{
-	color: grey;
+.second-nav .new:hover {
+  color: grey;
 }
 
 /* Article */
 
-article{
-	width: 93%;
-	margin: auto;
-	padding: 40px 0;
-	border-bottom: 2px solid yellow;
+article {
+  width: 93%;
+  margin: auto;
+  padding: 40px 0;
+  border-bottom: 2px solid yellow;
 }
 
-.username{
-	margin-bottom: .2rem;
-  background-color: red;
+.username {
+  margin-bottom: .2rem;
 }
 
-.username a{
-	font-size: 1.1rem;
+.username a {
+  font-size: 1.1rem;
 }
 
-.container-article{
+.container-article {
   display: flex;
 }
 
-.container-article img{
+.container-article img {
   height: 68px;
   width: 68px;
   margin-right: 10px;
@@ -155,47 +155,49 @@ time {
   opacity: .7;
 }
 
-.post{
-	font-size: .94rem;
+.post {
+  font-size: .94rem;
 }
 
 /* PROFILE */
-.profile{
-	display: flex;
-	align-items: center;
-	flex-direction: column;
+.profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.profile img{
+.profile img {
   height: 100px;
   width: 100px;
   margin-right: 10px;
   border-radius: 50%;
   margin: 20px;
 }
-.profile h2{
-	margin-top: -10px;
-	font-size: 1.3rem;
+
+.profile h2 {
+  margin-top: -10px;
+  font-size: 1.3rem;
 }
 
 /* Followers / Following / Post */
-.follow{
-	display: flex;
-	width: 95%;
-	justify-content: space-around;
-	margin: 30px auto;
-	text-align: center;
-	border-bottom: 2px solid white;
-	padding-bottom: 20px;
+.follow {
+  display: flex;
+  width: 95%;
+  justify-content: space-around;
+  margin: 30px auto;
+  text-align: right;
+  border-bottom: 2px solid white;
+  padding-bottom: 20px;
 }
 
 
 /*Form Elements*/
 form {
-    margin: 0;
-    padding: 40px;
-    font-size: 1rem;
+  margin: 0;
+  padding: 40px;
+  font-size: 1rem;
 }
+
 input {
   width: 100%;
   border: 0;
@@ -206,10 +208,12 @@ input {
   margin: 0 0 20px;
   color: #777B7E;
 }
+
 input:focus {
   border-color: #7A9D96;
   color: #2C3238;
 }
+
 textarea {
   width: 100%;
   border: 0;
@@ -220,10 +224,12 @@ textarea {
   margin: 0 0 20px;
   color: #777B7E;
 }
+
 textarea:focus {
   border-color: #7A9D96;
   color: #2C3238;
 }
+
 button#submit {
   width: 100%;
   padding: 20px 0;
@@ -248,10 +254,12 @@ button#submit:hover {
   color: #fff;
   font-size: 0.9rem;
 }
+
 .success {
   background: #43DC7E;
   color: white;
 }
+
 .error {
   background: #AB3444;
   color: white;
@@ -260,7 +268,7 @@ button#submit:hover {
 
 
 /*Footer*/
-footer{
+footer {
   color: white;
   text-align: center;
   font-size: .875em;
@@ -275,7 +283,7 @@ footer p a {
   color: white;
 }
 
-img.profile{
+img.profile {
   height: 80px;
   width: 80px;
   margin-right: 10px;
@@ -284,7 +292,7 @@ img.profile{
 }
 
 
-.follow-button{
+.follow-button {
   color: white;
 }
 

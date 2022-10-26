@@ -15,30 +15,34 @@
 </head>
 <style>
   body {
-    background: green;
-  }
-
+  
+      background: white;
+      }
+   
+   
+  
   button {
-    background-color: yellow;
+    background-color: white;
   }
 
   h1 {
-    background-color: yellow;
+    background-color: white;
   }
 
   label {
-    border-bottom: red;
+    border-bottom: center;
   }
+ 
 </style>
 
 <body>
-  <div class="container" style="background-color: green;">
+  <div class="container" style="background-color:  #fafafa;">
     <!-- Formulario-->
     <!-- <section class="form-register"> -->
     <form class="form-register">
       {% csrf_token %}
       <div class="info">
-        <h1 class="titt"> Contactanos</h1>
+        <h1 style="background-color: #fafafa;"> Contactanos</h1>
         <nav class="second-nav">
           <a class="feed" href="{% url 'feed' %}">REGRESAR</a>
 
@@ -101,7 +105,7 @@
 
 
         <!-- <input class="buttons" type="submit" value="Contactanos"> -->
-        <button class="buttons" type="submit" onclick="datos()" style="color: blue"> Enviar </button>
+        <center><button class="buttons" type="submit" onclick="datos()" style="background:  blue"> Enviar </button></center>
 
       </div>
 

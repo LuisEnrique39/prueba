@@ -1,0 +1,271 @@
+{% extends 'social/layout.html' %}
+{% load static%}
+{% block content%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="scripts.js"></script>
+    <style>
+  
+        body {
+            margin: 0px;
+            background-color: white;
+            font-family: 'arial black', cursive;
+            size: 30px;
+        }
+
+        button {
+            font-size: 16px;
+            text-align: center;
+            border-radius: 8px;
+            padding: 10px 25px;
+        }
+
+        .page-nav {
+            background-color: #fafafa;
+            border: 1px solid white;
+            position: relative;
+        }
+
+        .page-nav h1 {
+            margin: 20px;
+            ;
+        }
+
+        .button-checkout {
+            background-color: white;
+            color: black;
+            border: 2px solid #008CBA;
+            /* Blue */
+            transition-duration: 0.4s;
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+        }
+
+        .button-checkout:hover {
+            background-color: #008CBA;
+            /* Blue */
+            color: white;
+        }
+
+        .page-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .product-container {
+            margin: 15px;
+            padding: 2px 16px;
+            position: relative;
+            box-shadow: 0 4px 8px 0 white(0, 0, 0, 0.1);
+            background-color: #fafafa;
+        }
+
+        .product-container:hover {
+            box-shadow: 0 8px 16px 0 white(0, 0, 0, 0.2);
+        }
+
+        .product-container img {
+            width: 300px;
+        }
+
+        .product-container h1 {
+            margin-bottom: 10px;
+            margin-left: 15px;
+        }
+
+        .button-add {
+            background-color: white;
+            color: black;
+            border: 2px solid red;
+            /* Green */
+            transition-duration: 0.4s;
+            position: absolute;
+            right: 15px;
+            bottom: 10px;
+        }
+
+        .button-add:hover {
+            background-color: #77dd77;
+            /* Green */
+            color: white;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <div class="page-nav">
+        <a class="feed" href="{% url 'feed' %}">REGRESAR</a>
+        {% csrf_token %}
+
+        <center><font size="5" face="Arial black"><h1>TIENDA</h1></font></center>
+        <p>
+            <label class="etiquetaForm"></label>
+            <input class="controllers" value="{{user.id}}" type="hidden" name="user" id="userField"
+                placeholder="Ingrese su usuario" onkeypress="return ch(event)" required>
+        </p>
+        <p>
+            <label class="etiquetaForm">Nombre*</label>
+            <input class="controllers" type="text" name="user" id="nombreField" placeholder="Ingrese su usuario"
+                onkeypress="return ch(event)" required>
+        </p>
+        <p>
+            <label class="etiquetaForm">Apellidos* </label>
+            <input class="controllers" type="text" name="apellido" id="apellidoField" placeholder="Ingrese su apellido"
+                onkeypress="return ch(event)" required>
+        </p>
+        <p>
+            <label class="etiquetaForm">Correo* </label>
+            <input class="controllers" type="email" name="correo" id="correoField" placeholder="Ingrese tu correo"
+                onkeypress="return ch(event)" required>
+        </p>
+        <p>
+            <label class="etiquetaForm">Numero* </label>
+            <input class="controllers" type="text" name="Numero" id="numeroField" placeholder="Ingrese su numero"
+                onkeypress="return ch(event)" required>
+        </p>
+        <p>
+            <label for="pagoField">metodo de pago</label>
+            <select name="metodo_pago" id="pagoField">
+                <option value="True">tarjeta</option>
+                <option value="False">efectivo</option>
+
+            </select>
+
+
+
+        </p>
+        <button id="checkout" type="submit" class="button-checkout" onclick="pay()" >Pagar</button>
+
+    </div>
+    <div class="page-content" id="producto">
+        <div class="product-container" id="producto1" onkeypress="return ch(event)" required >
+            <h3>nombre</h3>  
+            <img src="{% static 'img/limon.jpg' %}" alt="">
+            <h1>$5</h1>
+                <button class="button-add" onclick="add('product-1', 5)" onkeypress="return ch(event)" required >Agregar</button>
+        </div>
+
+        <div class="product-container" id="producto2">
+            <h3>nombre</h3>  
+            <img src="{% static 'img/chocloate.jpg' %}" alt="">
+            <h1>$5</h1>
+                    <button class="button-add" onclick="add('product-2', 5)">Agregar</button>
+        </div>
+
+        <div class="product-container">
+            <h3>nombre</h3>  
+            <img src="{% static 'img/12.jpg' %}" alt="">
+            <h1>$5</h1>
+                    <button class="button-add" onclick="add('product-3', 5)">Agregar</button>
+        </div>
+
+        <div class="product-container">
+            <h3>nombre</h3>  
+            <img src="{% static 'img/12.jpg' %}" alt="">
+            <h1>$5</h1>
+                <button class="button-add" onclick="add('product-4', 5)">Agregar</button>
+        </div>
+
+        <div class="product-container">
+            <h3>nombre</h3>  
+            <img src="{% static 'img/12.jpg' %}" alt="">
+            <h1>$5</h1>
+            <button class="button-add" onclick="add('product-5', 5)">Agregar</button>
+        </div>
+
+        <div class="product-container">
+            <h3>nombre</h3>  
+            <img src="{% static 'img/12.jpg' %}" alt="">
+            <h1>$5</h1>
+                <button class="button-add" onclick="add('product-6', 5)">Agregar</button>
+        </div>
+
+        <div class="product-container">
+            <h3>nombre</h3>  
+            <img src="{% static 'img/12.jpg' %}" alt="">
+            <h1>$5</h1>
+                <button class="button-add" onclick="add('product-7', 5)">Agregar</button>
+        </div>
+
+        <div class="product-container">
+            <h3>nombre</h3>  
+            <img src="{% static 'img/12.jpg' %}" alt="">
+            <h1>$5</h1>
+                        <button class="button-add" onclick="add('product-8', 5)">Agregar</button>
+        </div>
+
+      
+
+
+
+
+
+    </div>
+
+    <script>
+        let products = [];
+        let total = 0;
+
+
+        function add(product, price) {
+            console.log(product, price);
+            products.push(product);
+            total = total + price;
+            document.getElementById("checkout").innerHTML = `Pagar $${total}`
+
+        }
+
+        /*     function pay() {
+                window.alert(products.join(", \n"));
+            }  */
+    </script>
+    <script>
+
+        function pay() {
+
+            $.ajax({
+                url: "{% url 'tienda' %}",
+                type: "POST",
+                data: {
+                    'Usuario': $('#userField').val(),
+                    'Nombre': $('#nombreField').val(),
+                    'Apellidos': $('#apellidoField').val(),
+                    'Correo': $('#correoField').val(),
+                    'Numero': $('#numeroField').val(),
+                    'metodo_pago': $('#pagoField').val(),
+                    'total': total,
+
+
+                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+                }
+            })
+
+        }
+
+
+    </script>
+<!--     <script>
+        function clearHtml() {
+            button-checkout.innerHTML = '';
+        }
+    </script> -->
+
+</body>
+
+
+</html>
+{% endblock %}

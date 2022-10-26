@@ -13,11 +13,20 @@
 </head>
 
 <body>
+	<style>
+		.footer {
+			background-color: rgb(100, 100, 100);
+			text-align: center;
+			margin-top: auto;
+			position: absolute;
+			width: 100%;
+		}
+	</style>
+	<header>
 
-	<header class="main-head">
 		<nav class="main">
 			<h1 id="logo">BIENVENIDOS</h1>
-			<ul>				
+			<ul>
 
 				{% if request.user.is_authenticated %}
 
@@ -29,8 +38,8 @@
 
 				<li><a href="{% url 'login' %}">Login</a></li>
 
-
 				<li><a href="{% url 'contacto' %}">Comentarios</a></li>
+
 				{% endif %}
 
 			</ul>
@@ -50,12 +59,12 @@
 	<!-------------------------------------
 					Navigation Bar 
 	-------------------------------------->
-	<div class="main">
+	<div>
 
 		<nav class="second-nav">
 			{% if request.user.is_authenticated %}
 
-			{% if user.is_superuser == True  %}
+			{% if user.is_superuser == True %}
 
 
 			<a class="feed" href="{% url 'feed' %}">Inicio</a>
@@ -68,21 +77,28 @@
 
 			<a class="new" href="{% url 'contacto' %}">datos</a>
 
-			{% else  %} 
+			{% else %}
 			<a class="new" href="{% url 'carrusel' %}">carrusel</a>
-			
+
 			<a class="new" href="{% url 'consul' %}">consulta</a>
 
 			<a class="new" href="{% url 'ema' %}">email</a>
 
-	{% endif %}
-	{% else  %} 
-	{% endif %}
+			<a class="new" href="{% url 'tienda' %}">Tienda</a>
+
+			<a class="new" href="{% url 'consultatienda' %}">Consulta Tienda</a>
+
+			{% endif %}
+			{% else %}
+			{% endif %}
 
 		</nav>
 
 
 		{% block content %}
+
+
+
 
 		{% endblock content %}
 
@@ -90,13 +106,48 @@
 
 	</div>
 
-	<footer>
-		<div class="row">
+	<footer class="footer text-faded text-center py-5">
+		<div class="container">
+			<p class="m-0">
+				<a href="#" class="link">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+				<a href="#" class="link">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+				<a href="#" class="link">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			</p>
+			<a href="{% url 'ema' %}">
+				<center> <button type="button" class="btn btn-dark">Contactanos</button>
+				</center>
+			</a>
 
-			<h1>VUELVE PRONTO</h1>
+			<p class="m-0 mbt">
+				<center>
+					<font>
+		
+						<a href="sample.html" class="link">   Luis</a>  ·
+					<a href="sample.html" class="link">   Aviso legal   </a> ·
+						<a href="sample.html" class="link">   Cookies   </a> ·
+					</font>
+				</center>
+
+			</p>
+			<p class="m-0 mbt1">&copy; luis</p>
 		</div>
 	</footer>
-
 </body>
+
 
 </html>

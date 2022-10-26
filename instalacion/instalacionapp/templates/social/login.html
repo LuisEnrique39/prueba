@@ -2,11 +2,21 @@
 
 {% block content %}
 
-<form class="form" method="post">
+<form class="form" method="post" width="10000px" height="10000px" alt="">
+	<style>
+		body {
+			background: white;
+		}
+
+		form {
+			height: 16em;
+			background: #fafafa;
+		}
+	</style>
 	{% csrf_token %}
 	{{ form.as_p }}
 
-	<button type="submit" id="submit">Login</button>
+	<button type="submit" id="submit" style="background: red">Login</button>
 </form>
 
 {% endblock %}

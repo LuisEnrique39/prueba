@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CONSULTA</title>
+  <title>CONSULTA TIENDA</title>
 
 </head>
 
@@ -87,40 +87,29 @@
                 <th>id</th>
               </center>
               <center>
-                <th>id_propiedad</th>
+                <th>nombre</th>
               </center>
 
               <center>
-                <th>tipo_propiedad</th>
+                <th>apellido</th>
               </center>
 
               <center>
-                <th>ubicacion</th>
+                <th>correo</th>
               </center>
 
               <center>
-                <th>metros_cuadrados</th>
+                <th>numero</th>
               </center>
 
               <center>
-                <th>renta_o_venta</th>
+                <th>pago</th>
               </center>
 
               <center>
-                <th>precio</td>
+                <th>total</td>
               </center>
 
-              <center>
-                <th>n_habitaciones</th>
-              </center>
-
-              <center>
-                <th>estado_habitaciones</th>
-              </center>
-
-              <center>
-                <th>disponible</th>
-              </center>
               <font>
           </tr>
         </thead>
@@ -128,40 +117,32 @@
 
         <center>
           <tbody>
-            {% if posts %}
-            {% for info in posts %}
+            {% if me %}
+            {% for info in me %}
             <tr>
 
               <center>
                 <td>{{info.id}}</td>
               </center>
               <center>
-                <td>{{info.id_propiedad}}</td>
+                <td>{{info.nombre}}</td>
               </center>
               <center>
-                <td>{{info.tipo_propiedad}}</td>
+                <td>{{info.apellido}}</td>
               </center>
               <center>
-                <td>{{info.ubicacion}}</td>
+                <td>{{info.correo}}</td>
               </center>
               <center>
-                <td>{{info.metros_cuadrados}}</td>
+                <td>{{info.numero}}</td>
               </center>
               <center>
-                <td>{{info.renta_o_venta}}</td>
+                <td>{{info.pago}}</td>
               </center>
               <center>
-                <td>{{info.precio}}</td>
+                <td>{{info.total}}</td>
               </center>
-              <center>
-                <td>{{info.n_habitaciones}}</td>
-              </center>
-              <center>
-                <td>{{info.estado_habitaciones}}</td>
-              </center>
-              <center>
-                <td>{{info.disponible}}</td>
-              </center>
+              
 
 
 

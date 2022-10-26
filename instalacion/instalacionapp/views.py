@@ -11,6 +11,7 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.http import HttpResponseForbidden
+from .models import tienda
 #django nos permite tener forms#
 
 
@@ -81,6 +82,7 @@ def carrusel(request):
   return render(request, 'social/carrusel.html')
 
 def consulta(request):
+    
     info = Post.objects.all()
   
     context= {'posts': info}
@@ -113,4 +115,34 @@ def correo(request):
   context = {}
   return render(request, 'social/ema.html')
 
+def compras(request):
+  print(request)
+  if request.method == 'POST':  
+       
+        dato = tienda.objects.create(
+          
+                user_id=request.POST['Usuario'], 
+                nombre=request.POST['Nombre'], 
+                apellido=request.POST['Apellidos'], 
+                correo=request.POST['Correo'], 
+                numero=request.POST['Numero'],
+                pago=request.POST['metodo_pago'],
+                total=request.POST['total'],
+
+                
+				
+               
+            
+          )
+        dato.save()
+  return render(request, 'social/tienda.html')
+
+def consultati(request):
+    
+    informa = tienda.objects.all()
+  
+    context= {'me': informa}
+
+
+    return render(request, 'social/consultatienda.html', context)
   

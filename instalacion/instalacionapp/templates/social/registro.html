@@ -1,8 +1,27 @@
+
+
 {% extends 'social/layout.html' %}
 
 {% block content %}
 
 <form class="form" method="post">
+	<style>
+ 
+ 
+	body {
+		background: white;
+	 }
+		form{
+			height: 16em;
+			background: #F2EEEE
+
+;
+
+		height: 30em;
+		}
+	
+
+</style>
 	{% csrf_token %}
 	{{ form.as_p }}
 
