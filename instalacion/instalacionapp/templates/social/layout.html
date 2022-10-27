@@ -15,8 +15,8 @@
 <body>
 	<style>
 		.footer {
-			background-color: rgb(100, 100, 100);
-			text-align: center;
+			background: #f5ebf5;
+						text-align: center;
 			margin-top: auto;
 			position: absolute;
 			width: 100%;
@@ -38,7 +38,6 @@
 
 				<li><a href="{% url 'login' %}">Login</a></li>
 
-				<li><a href="{% url 'contacto' %}">Comentarios</a></li>
 
 				{% endif %}
 
@@ -75,9 +74,11 @@
 
 			<a class="new" href="{% url 'prueba' %}">Prueba</a>
 
-			<a class="new" href="{% url 'contacto' %}">datos</a>
+			<a class="new" href="{% url 'contacto' %}">propiedad</a>
+
 
 			{% else %}
+
 			<a class="new" href="{% url 'carrusel' %}">carrusel</a>
 
 			<a class="new" href="{% url 'consul' %}">consulta</a>
