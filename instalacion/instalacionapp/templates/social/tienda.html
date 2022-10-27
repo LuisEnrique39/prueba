@@ -101,6 +101,11 @@
             /* Green */
             color: white;
         }
+        .prueba{
+            padding: 1 10px 3px 3px;
+            border: 1.8px solid black;
+            background: #f5ebf5;
+        }
 
     </style>
     
@@ -109,7 +114,8 @@
 <body>
 
     <div class="page-nav">
-        <a class="feed" href="{% url 'feed' %}">REGRESAR</a>
+        <br>
+        <center><a class="prueba" href="{% url 'feed' %}">REGRESAR</a></center>
         {% csrf_token %}
 
         <center><font size="5" face="Arial black"><h1>TIENDA</h1></font></center>

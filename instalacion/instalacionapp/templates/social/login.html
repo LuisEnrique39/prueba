@@ -2,14 +2,18 @@
 
 {% block content %}
 
-<form class="form" method="post" width="10000px" height="10000px" alt="">
+<form class="form" method="post" width="zz" height="100px" alt="">
 	<style>
 		body {
 			background: white;
 		}
 
 		form {
-			height: 16em;
+			width: 120%;
+			max-width: 800px;
+			margin: 0 auto;
+			align-items: center;
+			border: 0em;
 			background: #fafafa;
 		}
 	</style>
@@ -17,6 +21,7 @@
 	{{ form.as_p }}
 
 	<button type="submit" id="submit" style="background: red">Login</button>
-</form>
 
+</form>
+<br>
 {% endblock %}

@@ -32,19 +32,28 @@
   label {
     border-bottom: center;
   }
- 
+  form{
+  width: 120%;
+  max-width: 800px;
+  margin: 0 auto;
+  align-items: center;
+  border: 0em;
+  background: #fafafa;
+}
+.prueba{
+  padding: 1 10px 3px 3px;
+  border: 1.8px solid black;
+  background: #f5ebf5;
+}
 </style>
 
 <body>
-  <div class="container" style="background-color:  #fafafa;">
-    <!-- Formulario-->
-    <!-- <section class="form-register"> -->
     <form class="form-register">
       {% csrf_token %}
       <div class="info">
         <h1 style="background-color: #fafafa;"> Contactanos</h1>
-        <nav class="second-nav">
-          <a class="feed" href="{% url 'feed' %}">REGRESAR</a>
+        <nav >
+         <center> <a class="prueba" href="{% url 'feed' %}">REGRESAR</a>         </center>
 
 
         </nav>
@@ -105,8 +114,10 @@
 
 
         <!-- <input class="buttons" type="submit" value="Contactanos"> -->
-        <center><button class="buttons" type="submit" onclick="datos()" style="background:  blue"> Enviar </button></center>
+        <font size="5" face="Arial black" >
 
+        <center><button class="buttons" type="submit" onclick="datos()" style="background: #c6b1c9;"> Enviar </button></center>
+</font>
       </div>
 
 

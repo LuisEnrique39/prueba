@@ -86,7 +86,7 @@ a {
 /* NAVIGATION BAR */
 .second-nav {
   display: flex;
-  padding: 15px 30px;
+  padding: 16px 30px;
 }
 
 .second-nav .feed {
@@ -111,7 +111,6 @@ a {
   flex: 6 1 5rem;
   text-align: right;
   text-transform: uppercase;
-  color: #7A9D96;
 }
 
 .second-nav .new:hover {
@@ -136,14 +135,13 @@ article {
 }
 
 .container-article {
-  display: flex;
+  display: auto;
 }
 
 .container-article img {
-  height: 68px;
-  width: 68px;
-  margin-right: 10px;
-  border-radius: 50%;
+  height:100px;
+  width: 100px;
+  margin-right: 100px;
 }
 
 article:last-child {
@@ -200,17 +198,15 @@ form {
 
 input {
   width: 100%;
-  border: 0;
+  border: 10;
   border-bottom: 2px solid white;
   outline: 0;
   background: white;
   padding: 20px 0 4px;
-  margin: 0 0 20px;
-  color: #777B7E;
+  margin: 0 0 10px;
 }
 
 input:focus {
-  border-color: #7A9D96;
   color: #2C3238;
 }
 
@@ -222,7 +218,6 @@ textarea {
   background: #fff;
   padding: 20px 0 4px;
   margin: 0 0 20px;
-  color: #777B7E;
 }
 
 textarea:focus {
@@ -234,7 +229,6 @@ button#submit {
   width: 100%;
   padding: 20px 0;
   text-align: center;
-  background: #7A9D96;
   color: #fff;
   border: 0;
   border-radius: 4px;
