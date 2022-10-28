@@ -83,6 +83,16 @@
 
 
 <br>
+<!-- 
+<div style="width: 100%; display: flex; align-items: center; justify-content: center;">
+  <select name="" id=""> 
+    <option value="" disabled selected>Seleccione un usuario</option>
+  {% for user in user %}
+  <option value="">{{ user.username}}</option>
+  {% endfor %}
+</select>
+</div> -->
+
     <center>
       <font size="2" face="times roman">
     </center>
@@ -126,10 +136,10 @@
 
         <center>
           <tbody>
-            {% if me %}
-            {% for ejemplo in me %}
-            <tr>
 
+            {% for ejemplo in me %}
+            {% if ejemplo %}
+            <tr>
               <center>
                 <td>{{ejemplo.id}}</td>
               </center>
@@ -151,19 +161,14 @@
               <center>
                 <td>{{ejemplo.total}}</td>
               </center>
-              
-
-
+              {% else %}
+              <h1>NO HAY REGISTROS</h1>
+              {% endif %}
+              {% endfor %}
 
           </tbody>
         </center>
-        {% endfor %}
-
-        {% else %}
-
-        <h1>NO HAY REGISTROS</h1>
-
-        {% endif %}
+       
   </main>
   </table>
   </center>

@@ -15,11 +15,14 @@
 <body>
 	<style>
 		.footer {
-			background: #f5ebf5;
-						text-align: center;
+			background: #f5EBf5;
+			text-align: center;
 			margin-top: auto;
 			position: absolute;
 			width: 100%;
+		}
+		a{
+			color: black;
 		}
 	</style>
 	<header>
@@ -38,6 +41,7 @@
 
 				<li><a href="{% url 'login' %}">Login</a></li>
 
+				<li><a href="{% url 'contacto' %}">Comentarios</a></li>
 
 				{% endif %}
 
@@ -66,7 +70,7 @@
 			{% if user.is_superuser == True %}
 
 
-			<a class="feed" href="{% url 'feed' %}">Inicio</a>
+			<a class="feed" href="{% url 'feed ' %}">Inicio</a>
 
 
 
@@ -74,11 +78,9 @@
 
 			<a class="new" href="{% url 'prueba' %}">Prueba</a>
 
-			<a class="new" href="{% url 'contacto' %}">propiedad</a>
-
+			<a class="new" href="{% url 'contacto' %}">datos</a>
 
 			{% else %}
-
 			<a class="new" href="{% url 'carrusel' %}">carrusel</a>
 
 			<a class="new" href="{% url 'consul' %}">consulta</a>
@@ -87,7 +89,7 @@
 
 			<a class="new" href="{% url 'tienda' %}">Tienda</a>
 
-			<a class="new" href="{% url 'consultatienda' %}">Consulta Tienda</a>
+			<a class="new" href="{% url 'consultatienda' user.username %}">Consulta Tienda</a>
 
 			{% endif %}
 			{% else %}
@@ -130,7 +132,7 @@
 				</a>
 			</p>
 			<a href="{% url 'ema' %}">
-				<center> <button type="button" class="btn btn-dark">Contactanos</button>
+				<center> <button type="button" >Contactanos</button>
 				</center>
 			</a>
 

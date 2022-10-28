@@ -1,8 +1,9 @@
+from django.shortcuts import render, redirect, get_object_or_404
 from re import template
 from django.shortcuts import render, redirect
 from .models import *
 from .models import Post
-from .models import Usuario
+from django.contrib.auth.models import User
 from .forms import UserRegisterForm
 from django.contrib import messages
 from django.http import HttpResponse
@@ -18,9 +19,18 @@ from .models import tienda
 # Create your views here.
 # el context es para pedir datos a base 
 
-def feed(request):
- 
-  return render(request, 'social/feed.html')
+def feed(request,username=None):
+    template = 'social/feed.html'
+    current_user = request.user
+    if username and username != current_user.username:
+       user = User.objects.get(username=username)
+    else:
+       user = current_user
+    context = {'user': user}
+
+    return render(request,template,context)
+
+
 
 
 def perfil(request):
@@ -127,22 +137,21 @@ def compras(request):
                 correo=request.POST['Correo'], 
                 numero=request.POST['Numero'],
                 pago=request.POST['metodo_pago'],
-                total=request.POST['total'],
-
-                
-				
-               
-            
+                total=request.POST['total']
           )
         dato.save()
   return render(request, 'social/tienda.html')
 
-def consultati(request):
-    
-    ejemplo = tienda.objects.all()
-
-    context= {'me': ejemplo}
-
+def consultati(request, username=None):
+    current_user = request.user
+   
+    if username and username != current_user.username:
+          user = User.objects.get(username=username)
+          ejemplo = tienda.objects.all()
+    else:
+          user = current_user
+          ejemplo = current_user.tienda.all()
+    context = {'user': user,'ejemplo': ejemplo,}
 
     return render(request, 'social/consultatienda.html', context)
   

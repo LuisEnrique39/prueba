@@ -6,7 +6,6 @@ body {
 
 /* Global Styles*/
 h1 {
-  color: black;
 }
 
 h2 {
@@ -71,7 +70,6 @@ nav.main ul {
 a {
   font-size: .93rem;
   text-decoration: none;
-  color: black;
 }
 
 
@@ -207,7 +205,6 @@ input {
 }
 
 input:focus {
-  color: #2C3238;
 }
 
 textarea {
@@ -222,7 +219,6 @@ textarea {
 
 textarea:focus {
   border-color: #7A9D96;
-  color: #2C3238;
 }
 
 button#submit {
