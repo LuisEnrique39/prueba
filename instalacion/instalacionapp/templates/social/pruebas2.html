@@ -1,0 +1,169 @@
+{% extends 'social/layout.html' %}
+{% block content%}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <title>Document</title>
+</head>
+<style>
+  body {
+  
+      background: #fa5f49;;
+      }
+   
+
+  button {
+    background-color:  #95b8f6;
+  }
+
+  h1 {
+    background-color: width;
+  }
+
+  label {
+    border-bottom: center;
+  }
+ 
+</style>
+
+<body>
+  <div class="container" style="background-color: #77dd77;">
+    <!-- Formulario-->
+    <!-- <section class="form-register"> -->
+    <form class="form-register">
+      {% csrf_token %}
+      <div class="info">
+        <h1 class="titt"> Contactanos</h1>
+        <nav class="second-nav">
+          <a class="feed" href="{% url 'feed' %}">REGRESAR</a>
+
+
+        </nav>
+        <font size="6" face="Arial black">
+          <p>BIENVENIDOS</p>
+        </font>
+      </div>
+
+      <div class="elementos">
+        <!-- campos a llenar -->
+        <div class="elementosForm">
+          <font size="5" face="Arial black">
+            <p>
+              <label class="etiquetaForm">nombre</label>
+              <img src="{% static 'img/12.jpg' %}" alt="">
+                <h1>$10</h1>
+              <button class="button-add" onclick="add('product-2', 300)">Agregar</button>
+            </p>
+          </font>
+          <font size="5" face="Arial black">
+            <p>
+              <label class="etiquetaForm">apellidos</label>
+            </p>
+          </font>
+
+          <font size="5" face="Arial black">
+            <p>
+              <label class="etiquetaForm">fecha</label>
+            </p>
+          </font>
+
+          <font size="5" face="Arial black">
+            <p>
+              <label class="etiquetaForm">asunto</label>
+            </p>
+          </font>
+
+          <font size="5" face="Arial black">
+            <p>
+              <label class="etiquetaForm">correo</label>
+            </p>
+          </font>
+
+          <font size="5" face="Arial black">
+            <p>
+              <label class="etiquetaForm">comentarios</label>
+            </p>
+          </font>
+
+
+        </div>
+        <!-- fin campos a llenar -->
+
+
+
+        <!-- <input class="buttons" type="submit" value="Contactanos"> -->
+        <button class="buttons" type="submit" onclick="datos()" style="color: yellow"> Enviar </button>
+
+      </div>
+
+
+    </form>
+    <!-- </section> -->
+    <!-- Fin Formulario-->
+
+    <!-- Fin contenedor -->
+  </div>
+  <script>
+    
+    let products = [];
+    let total = 0;
+
+    function add(product, price) {
+        console.log(product, price);
+        products.push(product);
+        total = total + price;
+        document.getElementById("checkout").innerHTML = ` Total a Pagar $${total}`
+    }
+
+    function pay() {
+        window.alert(products.join(", \n"));
+    }
+
+
+    function datos() {
+
+      $.ajax({
+        url: "{% url 'prueba2' %}",
+        type: "POST",
+        data: {
+
+          'nombre': $('#nomField').val(),
+          'apellidos': $('#apField').val(),
+          'fecha': $('#fecField').val(),
+          'asunto': $('#asunField').val(),
+          'correo': $('#emaiField').val(),
+          'comentarios': $('#comenField').val(),
+         
+          csrfmiddlewaretoken: '{{ csrf_token }}',
+        },
+        success: function (data) {
+          console.log(data)
+          console.log("Success");
+          window.location.href = "{% url 'prueba2' %}";
+
+
+        },
+
+        error: function () {
+          alert('Hubo algún error al realizar la llamada AJAX!');
+        }
+      });
+
+
+
+
+    }
+
+  </script>
+</body>
+
+</html>
+{% endblock %}

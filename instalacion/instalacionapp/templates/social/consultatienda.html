@@ -1,4 +1,5 @@
 {% extends 'social/layout.html' %}
+{% load static %}
 {% block content%}
 <!DOCTYPE html>
 <html lang="en">
@@ -117,44 +118,43 @@
 
         <center>
           <tbody>
-            {% if me %}
-            {% for ejemplo in me %}
+
+            {% for regis in ejemplo %}
+            {% if regis.user.username == user.username %}
             <tr>
-
               <center>
-                <td>{{ejemplo.id}}</td>
+                <td>{{regis.id}}</td>
               </center>
               <center>
-                <td>{{ejemplo.nombre}}</td>
+                <td>{{regis.nombre}}</td>
               </center>
               <center>
-                <td>{{ejemplo.apellido}}</td>
+                <td>{{regis.apellido}}</td>
               </center>
               <center>
-                <td>{{ejemplo.correo}}</td>
+                <td>{{regis.correo}}</td>
               </center>
               <center>
-                <td>{{ejemplo.numero}}</td>
+                <td>{{regis.numero}}</td>
               </center>
               <center>
-                <td>{{ejemplo.pago}}</td>
+                <td>{{regis.pago}}</td>
               </center>
               <center>
-                <td>{{ejemplo.total}}</td>
+                <td>{{regis.total}}</td>
               </center>
+            </tr>
+            {% else %}
+            <center>
+             
+              <td>No hay datos</td>
+             
+            </center>
+            {% endif %}
+            {% endfor %}
               
-
-
-
           </tbody>
         </center>
-        {% endfor %}
-
-        {% else %}
-
-        <h1>NO HAY REGISTROS</h1>
-
-        {% endif %}
   </main>
   </table>
   </center>

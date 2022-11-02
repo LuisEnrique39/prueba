@@ -137,12 +137,15 @@ def compras(request):
         dato.save()
   return render(request, 'social/tienda.html')
 
-def consultati(request):
-    
+def consultati(request, username=None):
     ejemplo = tienda.objects.all()
+    
+    current_user = request.user
+    if username and username != current_user.username:
+        user = User.objects.get(username=username)
+    else:
+        user = current_user
+    return render(request, 'social/consultatienda.html', {'user': user,'ejemplo' :ejemplo})
 
-    context= {'me': ejemplo}
 
-
-    return render(request, 'social/consultatienda.html', context)
-  
+ 

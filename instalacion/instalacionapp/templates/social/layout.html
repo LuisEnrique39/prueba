@@ -86,7 +86,7 @@
 
 			<a class="new" href="{% url 'tienda' %}">Tienda</a>
 
-			<a class="new" href="{% url 'consultatienda' %}">Consulta Tienda</a>
+			<a class="new" href="{% url 'consultatienda' user.username %}">Consulta Tienda</a>
 
 			{% endif %}
 			{% else %}
