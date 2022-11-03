@@ -148,4 +148,13 @@ def consultati(request, username=None):
     return render(request, 'social/consultatienda.html', {'user': user,'ejemplo' :ejemplo})
 
 
- 
+
+def consultapr(request, username=None):
+    l = Producto.objects.all()
+    
+    current_user = request.user
+    if username and username != current_user.username:
+        user = User.objects.get(username=username)
+    else:
+        user = current_user
+    return render(request, 'social/consultapro.html', {'user': user,'l' :l})

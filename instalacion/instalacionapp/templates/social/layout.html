@@ -69,7 +69,7 @@
 			{% if user.is_superuser == True %}
 
 
-			<a class="feed" href="{% url 'feed ' %}">Inicio</a>
+			<a class="feed" href="{% url 'feed' %}">Inicio</a>
 
 
 
@@ -78,6 +78,7 @@
 			<a class="new" href="{% url 'prueba' %}">Prueba</a>
 
 			<a class="new" href="{% url 'contacto' %}">datos</a>
+			<a class="new" href="{% url 'consultapro' user.username %}">Consulta pro</a>
 
 			{% else %}
 			<a class="new" href="{% url 'carrusel' %}">carrusel</a>
@@ -90,6 +91,9 @@
 			<a class="new" href="{% url 'tienda' %}">Tienda</a>
 
 			<a class="new" href="{% url 'consultatienda' user.username %}">Consulta Tienda</a>
+			
+			<a class="new" href="{% url 'consultapro' user.username %}">Consulta pro</a>
+
 
 			{% endif %}
 			{% else %}

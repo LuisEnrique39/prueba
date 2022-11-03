@@ -20,6 +20,7 @@ urlpatterns = [
     re_path('^tienda/$' , views.compras, name="tienda"),
     re_path('^consulta/$' , views.consultati, name="consultatienda"),
     path(r'^consulta/<str:username>/', views.consultati, name='consultatienda'),
-
+    re_path('^consultass/$' , views.consultapr, name="consultapro"),
+    path('^consultass/<str:username>/', views.consultapr, name='consultapro'),
 
 ]
