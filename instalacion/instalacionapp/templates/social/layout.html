@@ -71,17 +71,17 @@
 
 			<a class="feed" href="{% url 'feed' %}">Inicio</a>
 
-
-
 			<a class="profile" href="{% url 'perfil' %}">Mi Perfil</a>
 
 			<a class="new" href="{% url 'prueba' %}">Prueba</a>
 
 			<a class="new" href="{% url 'contacto' %}">datos</a>
+
 			<a class="new" href="{% url 'consultapro' user.username %}">Consulta pro</a>
 
 			{% else %}
 			<a class="new" href="{% url 'carrusel' %}">carrusel</a>
+			
 			<a class="new" href="{% url 'contacto' %}">contacto</a>
 
 			<a class="new" href="{% url 'consul' %}">consulta</a>
@@ -93,7 +93,6 @@
 			<a class="new" href="{% url 'consultatienda' user.username %}">Consulta Tienda</a>
 			
 			<a class="new" href="{% url 'consultapro' user.username %}">Consulta pro</a>
-
 
 			{% endif %}
 			{% else %}
