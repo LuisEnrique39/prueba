@@ -77,7 +77,6 @@
 
 			<a class="new" href="{% url 'contacto' %}">datos</a>
 
-			<a class="new" href="{% url 'consultapro' user.username %}">Consulta pro</a>
 
 			{% else %}
 			<a class="new" href="{% url 'carrusel' %}">carrusel</a>
@@ -92,7 +91,6 @@
 
 			<a class="new" href="{% url 'consultatienda' user.username %}">Consulta Tienda</a>
 			
-			<a class="new" href="{% url 'consultapro' user.username %}">Consulta pro</a>
 
 			{% endif %}
 			{% else %}

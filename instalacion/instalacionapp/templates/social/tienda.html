@@ -185,71 +185,23 @@
     <br>
     <button id="checkout" type="submit" class="button-checkout" onclick="pay()">Pagar</button>
 
-    <div class="page-content" id="producto">
-        <div class="product-container" id="producto1" onkeypress="return ch(event)" required>
-            <h3>Paleta De Limon</h3>
-            <img src="{% static 'img/limon.jpg' %}" width="410" height="410" />
-            <h1>$10</h1>
-            <button class="button-add" onclick="add('product-1', 10)" onkeypress="return ch(event)"
-                required>Agregar</button>
-        </div>
 
-        <div class="product-container" id="producto2">
-            <h3>Paleta De Chicle</h3>
-            <img src="{% static 'img/chicle.png' %}" width="410" height="410" />
-            <h1>$10</h1>
-            <button class="button-add" onclick="add('product-2', 10)">Agregar</button>
-        </div>
-
-        <div class="product-container">
-            <h3>Paleta De Grosella</h3>
-            <img src="{% static 'img/grosella.jpg' %}" width="410" height="410" />
-            <h1>$10</h1>
-            <button class="button-add" onclick="add('product-3', 10)">Agregar</button>
-        </div>
-
-        <div class="product-container">
-            <h3>Paleta De Guayaba</h3>
-            <img src="{% static 'img/guayaba.jpg' %}" width="410" height="410" />
-            <h1>$10</h1>
-            <button class="button-add" onclick="add('product-4', 10)">Agregar</button>
-        </div>
-
-        <div class="product-container">
-            <h3>Paleta De Mango</h3>
-            <img src="{% static 'img/mango.jpg' %}" width="410" height="410" />
-            <h1>$10</h1>
-            <button class="button-add" onclick="add('product-5', 10)">Agregar</button>
-        </div>
-
-        <div class="product-container">
-            <h3>Paleta De Uva</h3>
-            <img src="{% static 'img/uva.jpg' %}" width="410" height="410" />
-            <h1>$10</h1>
-            <button class="button-add" onclick="add('product-6', 10)">Agregar</button>
-        </div>
-
-        <div class="product-container">
-            <h3>Paleta De Galleta</h3>
-            <img src="{% static 'img/galleta.png' %}" width="410" height="410" />
-            <h1>$15</h1>
-            <button class="button-add" onclick="add('product-7', 15)">Agregar</button>
-        </div>
-
-        <div class="product-container">
-            <h3>Paleta De Pistache</h3>
-            <img src="{% static 'img/pistache.jpg' %}" width="410" height="410" />
-            <h1>$15</h1>
-            <button class="button-add" onclick="add('product-8', 15)">Agregar</button>
-        </div>
-        <div class="product-container">
-            <h3>Paleta De Queso</h3>
-            <img src="{% static 'img/queso.png' %}" width="410" height="410" />
-            <h1>$15</h1>
-            <button class="button-add" onclick="add('product-8', 15)">Agregar</button>
-        </div>
+         {% for producto in ejemplos %}
 
 
+
+
+        <div> 
+            <p>
+        
+            <h2 style="color: white;">{{producto.nombre}}</h2>
+            <h2 style="color: white;">{{producto.precio}}</h2>
+            <h2 style="color: white;">{{producto.descripcion}}</h2>
+            <h2 style="color: white;">{{producto.marca}}</h2>
+            <p> <img src="{{producto.imagen.url}}" alt="" width="400px" height="400px"> </p>
+        </p> </div>
+        
+        {% endfor %} 
 
 
 
