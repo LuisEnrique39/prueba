@@ -47,7 +47,7 @@ class Marca(models.Model):
 
 class Producto(models.Model):
     nombre = models.CharField(max_length=50)
-    precio = models.IntegerField()
+    precio = models.FloatField()
     descripcion = models.TextField()
     marca = models.ForeignKey(Marca, on_delete=models.PROTECT)
     imagen = models.ImageField(upload_to="productos", null=True)

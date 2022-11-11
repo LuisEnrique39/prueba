@@ -10,11 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="scripts.js"></script>
     <script src="https://kit.fontawesome.com/82cfdc2825.js" crossorigin="anonymous"></script>
+
+
     <style>
         body {
             background-color: white;
@@ -131,7 +136,6 @@
         <center><a class="prueba" href="{% url 'feed' %}">REGRESAR</a></center>
 
         {% csrf_token %}
-        {{ form.as_p }}
 
         <center>
             <font size="5" face="Arial ">
@@ -183,95 +187,126 @@
     <br>
     <br>
     <br>
+
     <button id="checkout" type="submit" class="button-checkout" onclick="pay()">Pagar</button>
 
+    <div class="page-content" id="producto">
+        <div class="product-container" id="producto1" onkeypress="return ch(event)" required>
+            <h3>Paleta De Limon</h3>
+            <img src="{% static 'img/limon.jpg' %}" width="410" height="410" />
+            <h1>$10</h1>
+            <button class="button-add" onclick="add('product', 10)" onkeypress="return ch(event)"
+                required>Agregar</button>
+            {% for producto in ejemplos %}
 
-         {% for producto in ejemplos %}
-
-
-
-
-        <div> 
-            <p>
-        
-            <h2 style="color: white;">{{producto.nombre}}</h2>
-            <h2 style="color: white;">{{producto.precio}}</h2>
-            <h2 style="color: white;">{{producto.descripcion}}</h2>
-            <h2 style="color: white;">{{producto.marca}}</h2>
-            <p> <img src="{{producto.imagen.url}}" alt="" width="400px" height="400px"> </p>
-        </p> </div>
-        
-        {% endfor %} 
-
-
-
-
+        </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <script>
-        let products = [];
-        let total = 0;
-
-
-        function add(product, price) {
-            console.log(product, price);
-            products.push(product);
-            total = total + price;
-            document.getElementById("checkout").innerHTML = `Pagar $${total}`
-
-        }
-
-        /*     function pay() {
-                window.alert(products.join(", \n"));
-            }  */
-    </script>
-    <script>
-
-        function pay() {
-            let nombre = String(nombreField.value).trim();
-
-            if (nombre.length === 0) {
-                Swal.fire({
-                    title: 'Error!',
-                    text: 'DATOS REQUERIDOS',
-                    icon: 'error',
-                    confirmButtonText: 'OK',
-                    timer: 2000
-
-                });
-            } else {
-                $.ajax({
-                    url: "{% url 'tienda' %}",
-                    type: "POST",
-                    data: {
-                        'Usuario': $('#userField').val(),
-                        'Nombre': $('#nombreField').val(),
-                        'Apellidos': $('#apellidoField').val(),
-                        'Correo': $('#correoField').val(),
-                        'Numero': $('#numeroField').val(),
-                        'metodo_pago': $('#pagoField').val(),
-                        'total': total,
-
-                        csrfmiddlewaretoken: '{{ csrf_token }}',
-                    },
-                    success: function (data) {
-                        console.log(data)
-                        console.log("Success");
-                        window.location.href = "{% url 'tienda' %}";
+    </div>
+    <div class="page-content">
+        <div class="product-container">
+            <div class="col-sm-6">
+                zzzzz <h2 class="card-text">{{producto.marca}}</h2>
+                <h2 class="card-text">{{producto.nombre}}</h2>
+                <img class="card-img-top" src="{{producto.imagen.url}}" alt="" width="410" height="410">
+                <h2 class="card-text">{{producto.descripcion}}</h2>
+                <h2 class="card-text">$ {{producto.precio}}</h2>
+                <br>
+                <br>
+                <br>
+                <center><button class="button-add" onclick="add('{{producto}}','{{producto.precio}}')"
+                        onkeypress="return ch(event)" required>Agregar</button></center>
+            </div>
+        </div>
+        {% endfor %}
 
 
-                    },
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
-                    error: function () {
-                        alert('Hubo algún error al realizar la llamada AJAX!');
-                    }
-                });
+       <script>
+            let products = [];
+            let total = 0;
+
+
+            function add(product, precio) {
+                console.log(product, precio);
+                products.push(product);
+                total = (parseInt(total) + parseInt(precio));
+                document.getElementById("checkout").innerHTML = `Pagar $${[total]}`
+
+            }
+
+
+        </script> 
+
+       <!--  <script>
+
+            function add(producto, precio) {
+                let total = 0;
+                let products = [];
+
+                console.log(product, precio);
+                products.push(product);
+                precio = parseInt(precio); // Convertir el valor a un entero (número).
+                total = document.getElementById('checkout').innerHTML;
+                total = (total == null || total == undefined || total == "") ? 0 : total;
+                total = (parseInt(total) + parseInt(precio));
+                document.getElementById("checkout").innerHTML = `Pagar $${[total]}`
+            }
+        </script>-->
+
+        <script>
+
+            function pay() {
+                let nombre = String(nombreField.value).trim();
+
+                if (nombre.length === 0) {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'DATOS REQUERIDOS',
+                        icon: 'error',
+                        confirmButtonText: 'OK',
+                        timer: 2000
+
+                    });
+                } else {
+                    $.ajax({
+                        url: "{% url 'tienda' %}",
+                        type: "POST",
+                        data: {
+                            'Usuario': $('#userField').val(),
+                            'Nombre': $('#nombreField').val(),
+                            'Apellidos': $('#apellidoField').val(),
+                            'Correo': $('#correoField').val(),
+                            'Numero': $('#numeroField').val(),
+                            'metodo_pago': $('#pagoField').val(),
+                            'total': total,
+
+                            csrfmiddlewaretoken: '{{ csrf_token }}',
+                        },
+                        success: function (data) {
+                            console.log(data)
+                            console.log("Success");
+                            window.location.href = "{% url 'tienda' %}";
+
+
+                        },
+
+                        error: function () {
+                            alert('Hubo algún error al realizar la llamada AJAX!');
+                        }
+                    });
+
+
+
+                }
+
+
+
 
 
 
@@ -279,16 +314,9 @@
 
 
 
+        </script>
 
-
-
-        }
-
-
-
-    </script>
-
-    <!--     <script>
+        <!--     <script>
         function clearHtml() {
              button-checkout.innerHTML = '';
          }
