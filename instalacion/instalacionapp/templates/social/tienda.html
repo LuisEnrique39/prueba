@@ -9,12 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="scripts.js"></script>
-    <script src="https://kit.fontawesome.com/82cfdc2825.js" crossorigin="anonymous"></script>
+    
+
     <style>
         body {
             background-color: white;
@@ -24,96 +20,7 @@
 
 
 
-        .button-checkout {
-            background-color: white;
-            color: black;
-            border: 2px solid #008CBA;
-            /* Blue */
-            transition-duration: 0.4s;
-            position: absolute;
-            right: 15px;
-            bottom: 15px;
-        }
-
-        .button-checkout:hover {
-            background-color: #008CBA;
-            /* Blue */
-            color: white;
-        }
-
-        .page-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-        }
-
-        .product-container {
-            margin: 15px;
-            padding: 2px 16px;
-            position: relative;
-            box-shadow: 0 4px 8px 0 white(0, 0, 0, 0.1);
-            background-color: #fafafa;
-        }
-
-        .product-container:hover {
-            box-shadow: 0 8px 16px 0 white(0, 0, 0, 0.2);
-        }
-
-        .product-container img {
-            width: 300px;
-        }
-
-        .product-container h1 {
-            margin-bottom: 10px;
-            margin-left: 15px;
-        }
-
-        .button-add {
-            background-color: white;
-            color: black;
-            border: 2px solid red;
-            /* Green */
-            transition-duration: 0.4s;
-            position: absolute;
-            right: 15px;
-            bottom: 10px;
-        }
-
-        .button-add:hover {
-            background-color: #77dd77;
-            /* Green */
-            color: white;
-        }
-
-        .prueba {
-            padding: 1 10px 3px 3px;
-            border: 1.8px solid black;
-            background: #f5ebf5;
-        }
-
-        label {
-            border-bottom: center;
-        }
-
-        .bu {
-            width: 120%;
-            max-width: 1000px;
-            margin: 0 auto;
-            align-items: center;
-            border: 0em;
-            background: #fafafa;
-        }
-
-        input {
-
-            padding: 10px .00px 1px;
-            background: white;
-            min-width: 2px;
-            display: inline-block;
-            width: 100%;
-
-        }
-
+    
         .prueba {
             padding: 1 10px 3px 3px;
             border: 1.8px solid black;
@@ -124,178 +31,122 @@
 </head>
 
 <body>
-
-    <div class="bu">
-        <br>
-
-        <center><a class="prueba" href="{% url 'feed' %}">REGRESAR</a></center>
-
+    <form class="form-register">
         {% csrf_token %}
         {{ form.as_p }}
+    
+        <div class="info">
+          <center> <a class="prueba" href="{% url 'feed' %}">REGRESAR</a> </center>
+    <br><br>
 
-        <center>
-            <font size="5" face="Arial ">
-                <h1>TIENDA</h1>
+          <center>
+            <h1 > Contactanos</h1>
+          </center>
+          <nav>
+    
+    
+          </nav>
+    
+        </div>
+    
+        <div class="elementos">
+          <!-- campos a llenar -->
+          <div class="elementosForm">
+            <font size="5" face="Arial black">
+              <p>
+                <center><label class="etiquetaForm">nombre</label></center>
+                <input class="controllers" type="text" name="nombre" id="nombreField" placeholder="nombre" autofocus required>
+              </p>
             </font>
-        </center>
-        <center>
-            <p>
-                <label class="etiquetaForm"></label>
-                <input class="controllers" value="{{user.id}}" type="hidden" name="user" id="userField"
-                    placeholder="Ingrese su usuario" onkeypress="return ch(event)" required>
-            </p>
-            <p>
-                <label class="etiquetaForm">Nombre</label>
-                <input class="controllers" type="text" name="user" id="nombreField" placeholder="Ingrese su usuario"
-                    onkeypress="return ch(event)" autofocus required>
-            </p>
-            <p>
-                <label class="etiquetaForm">Apellidos </label>
-                <input class="controllers" type="text" name="apellido" id="apellidoField"
-                    placeholder="Ingrese su apellido" onkeypress="return ch(event)" autofocus required>
-            </p>
-            <p>
-                <label class="etiquetaForm">Correo</label>
-                <input class="controllers" type="email" name="correo" id="correoField" placeholder="Ingrese tu correo"
-                    onkeypress="return ch(event)" autofocus required>
-            </p>
-            <p>
-                <label class="etiquetaForm">Numero </label>
-                <input class="controllers" type="text" name="Numero" id="numeroField" placeholder="Ingrese su numero"
-                    onkeypress="return ch(event)" autofocus required>
-            </p>
-            <p>
-                <label for="pagoField">comprar</label>
-                <select name="metodo_pago" id="pagoField">
-                    <option value="True">si</option>
-                    <option value="False">no</option>
-
-                </select>
-
-
-
-            </p>
-
-
-    </div>
-
-    </center>
-    <br>
-    <br>
-    <br>
-    <button id="checkout" type="submit" class="button-checkout" onclick="pay()">Pagar</button>
-
-
-         {% for producto in ejemplos %}
-
-
-
-
-        <div> 
-            <p>
-        
-            <h2 style="color: white;">{{producto.nombre}}</h2>
-            <h2 style="color: white;">{{producto.precio}}</h2>
-            <h2 style="color: white;">{{producto.descripcion}}</h2>
-            <h2 style="color: white;">{{producto.marca}}</h2>
-            <p> <img src="{{producto.imagen.url}}" alt="" width="400px" height="400px"> </p>
-        </p> </div>
-        
-        {% endfor %} 
-
-
-
-
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <script>
-        let products = [];
-        let total = 0;
-
-
-        function add(product, price) {
-            console.log(product, price);
-            products.push(product);
-            total = total + price;
-            document.getElementById("checkout").innerHTML = `Pagar $${total}`
-
+            <font size="5" face="Arial black">
+              <p>
+                <center><label class="etiquetaForm">email</label></center>
+                <input class="controllers" type="email" name="email" id="emailField" placeholder="email" autofocus required>
+              </p>
+            </font>
+    
+            <font size="5" face="Arial black">
+              <p>
+                <center> <label class="etiquetaForm">asunto</label></center>
+                <input class="controllers" type="text" name="asunto" id="asuntoField" placeholder="asunto" autofocus required>
+              </p>
+            </font>
+    
+          
+    
+          </div>
+          <!-- fin campos a llenar -->
+    
+    
+    
+          <!-- <input class="buttons" type="submit" value="Contactanos"> -->
+          <font size="5" face="Arial black">
+    
+            <center><button class="buttons" type="submit" onclick="datos()" style="background: #c6b1c9;"> Enviar </button>
+            </center>
+          </font>
+        </div>
+    
+    
+      </form>
+    
+      </div>
+      <script>
+        function datos() {
+          let nombre = String(nomField.value).trim();
+    
+          if (nombre.length === 0) {
+            Swal.fire({
+              title: 'Error!',
+              text: 'DATOS REQUERIDOS',
+              icon: 'error',
+              confirmButtonText: 'OK',
+              timer: 2000
+    
+            });
+    
+          } else {
+            $.ajax({
+              url: "{% url 'ema' %}",
+              type: "POST",
+              data: {
+    
+                'nombre': $('#nombreField').val(),
+                'email': $('#apField').val(),
+                'asunto': $('#asuntoField').val(),
+               
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+              },
+              success: function (data) {
+                console.log(data)
+                console.log("Success");
+                window.location.href = "{% url 'ema' %}";
+    
+    
+              },
+    
+              error: function () {
+                alert('Hubo algún error al realizar la llamada AJAX!');
+              }
+            });
+    
+    
+    
+          }
+    
+    
         }
-
-        /*     function pay() {
-                window.alert(products.join(", \n"));
-            }  */
-    </script>
-    <script>
-
-        function pay() {
-            let nombre = String(nombreField.value).trim();
-
-            if (nombre.length === 0) {
-                Swal.fire({
-                    title: 'Error!',
-                    text: 'DATOS REQUERIDOS',
-                    icon: 'error',
-                    confirmButtonText: 'OK',
-                    timer: 2000
-
-                });
-            } else {
-                $.ajax({
-                    url: "{% url 'tienda' %}",
-                    type: "POST",
-                    data: {
-                        'Usuario': $('#userField').val(),
-                        'Nombre': $('#nombreField').val(),
-                        'Apellidos': $('#apellidoField').val(),
-                        'Correo': $('#correoField').val(),
-                        'Numero': $('#numeroField').val(),
-                        'metodo_pago': $('#pagoField').val(),
-                        'total': total,
-
-                        csrfmiddlewaretoken: '{{ csrf_token }}',
-                    },
-                    success: function (data) {
-                        console.log(data)
-                        console.log("Success");
-                        window.location.href = "{% url 'tienda' %}";
-
-
-                    },
-
-                    error: function () {
-                        alert('Hubo algún error al realizar la llamada AJAX!');
-                    }
-                });
-
-
-
-            }
-
-
-
-
-
-
-        }
-
-
-
-    </script>
-
-    <!--     <script>
-        function clearHtml() {
-             button-checkout.innerHTML = '';
-         }
-     </script> -->
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+      </script>
+    </body>
+    
 </body>
 
 

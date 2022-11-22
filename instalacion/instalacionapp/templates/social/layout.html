@@ -15,13 +15,14 @@
 <body>
 	<style>
 		.footer {
-			background: #f5EBf5;
+			background: aqua;
 			text-align: center;
 			margin-top: auto;
 			position: absolute;
 			width: 100%;
 		}
-		a{
+
+		a {
 			color: black;
 		}
 	</style>
@@ -36,8 +37,10 @@
 
 				<li><a href="{% url 'logout' %}">Logout</a></li>
 				{% else %}
+<br>
 
 				<li><a href="{% url 'registro' %}">Registrar</a></li>
+<br>
 
 				<li><a href="{% url 'login' %}">Login</a></li>
 
@@ -79,18 +82,17 @@
 
 
 			{% else %}
-			<a class="new" href="{% url 'carrusel' %}">carrusel</a>
-			
-			<a class="new" href="{% url 'contacto' %}">contacto</a>
+			<a class="new" href="{% url 'prueba' %}">INICIO</a>
 
-			<a class="new" href="{% url 'consul' %}">consulta</a>
+			<a class="new" href="{% url 'contacto' %}">FILOSOFIA</a>
 
-			<a class="new" href="{% url 'ema' %}">email</a>
+			<a class="new" href="{% url 'consul' %}">ASISTENCIA</a>
 
-			<a class="new" href="{% url 'tienda' %}">Tienda</a>
+			<a class="new" href="{% url 'ema' %}">DIRECTORIO</a>
 
-			<a class="new" href="{% url 'consultatienda' user.username %}">Consulta Tienda</a>
-			
+			<a class="new" href="{% url 'tienda' %}">CONTACTO</a>
+
+
 
 			{% endif %}
 			{% else %}
@@ -133,17 +135,17 @@
 				</a>
 			</p>
 			<a href="{% url 'ema' %}">
-				<center> <button type="button" >Contactanos</button>
+				<center> <button type="button">Contactanos</button>
 				</center>
 			</a>
 
 			<p class="m-0 mbt">
 				<center>
 					<font>
-		
-						<a href="sample.html" class="link">   Luis</a>  ·
-					<a href="sample.html" class="link">   Aviso legal   </a> ·
-						<a href="sample.html" class="link">   Cookies   </a> ·
+
+						<a href="sample.html" class="link"> Luis</a> ·
+						<a href="sample.html" class="link"> Aviso legal </a> ·
+						<a href="sample.html" class="link"> Cookies </a> ·
 					</font>
 				</center>
 

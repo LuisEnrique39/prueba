@@ -50,137 +50,163 @@
   body {
     background: white;
   }
+  .prueba {
+            padding: 1 10px 3px 3px;
+            border: 1.8px solid black;
+            background: #f5ebf5;
+        }
 
 </style>
 
 
 <body>
-  <main style="background-color: white;  height: 70em;">
-
+  <form class="form-register">
+    {% csrf_token %}
+    {{ form.as_p }}
 
     <div class="info">
+      <center> <a class="prueba" href="{% url 'feed' %}">REGRESAR</a> </center>
+
       <center>
-        <h1 class="titt"> CONSULTA DE DATOS PERSONAL</h1>
+        <h1 style="background-color: #fafafa;"> ASISTENCIA</h1>
       </center>
-      <center>
-        <nav class="second-nav"></nav>
-      </center>
-      <center><a class="feed" href="{% url 'feed' %}">REGRESAR</a></center>
+      <nav>
+
 
       </nav>
 
     </div>
 
+    <div class="elementos">
+      <!-- campos a llenar -->
+      <div class="elementosForm">
+        <font size="5" face="Arial black">
+          <p>
+            <center><label class="etiquetaForm">DUDAS</label></center>
+            <input class="controllers" type="hidden" name="nom" id="nomField" placeholder="nombre" autofocus required>
+          </p>
+        </font>
+        <font size="5" face="Arial black">
+          <p>
+            <center><label class="etiquetaForm">N. DE CLIENTE</label></center>
+            <input class="controllers" type="text" name="nom" id="nomField" placeholder="nombre" autofocus required>
+          </p>
+        </font> <font size="5" face="Arial black">
+          <p>
+            <center><label class="etiquetaForm">DESCRIPCION</label></center>
+            <input class="controllers" type="text" name="nom" id="nomField" placeholder="nombre" autofocus required>
+          </p>
+          <center><button class="buttons" type="submit" onclick="datos()" style="background: #c6b1c9;"> Enviar </button>
+          </center>
+        </font> <font size="5" face="Arial black">
+          <p>
+            <center><label class="etiquetaForm">QUEJAS</label></center>
+            <input class="controllers" type="hidden" name="nom" id="nomField" placeholder="nombre" autofocus required>
+          </p>
+        </font> <font size="5" face="Arial black">
+          <p>
+            <center><label class="etiquetaForm">N. DE CLIENTE</label></center>
+            <input class="controllers" type="text" name="nom" id="nomField" placeholder="nombre" autofocus required>
+          </p>
+        </font> <font size="5" face="Arial black">
+          <p>
+            <center><label class="etiquetaForm">DESCRIPCION</label></center>
+            <input class="controllers" type="text" name="nom" id="nomField" placeholder="nombre" autofocus required>
+          </p>
+          <center><button class="buttons" type="submit" onclick="datos()" style="background: #c6b1c9;"> Enviar </button>
+          </center><font size="5" face="Arial black">
+          <p>
+            <center><label class="etiquetaForm">CONTRATACION</label></center>
+            <input class="controllers" type="hidden" name="nom" id="nomField" placeholder="nombre" autofocus required>
+          </p>
+        </font>  <font size="5" face="Arial black">
+          <p>
+            <center><label class="etiquetaForm">N. DE CLIENTE</label></center>
+            <input class="controllers" type="text" name="nom" id="nomField" placeholder="nombre" autofocus required>
+          </p>
+        </font> <font size="5" face="Arial black">
+          <p>
+            <center><label class="etiquetaForm">DESCRIPCION</label></center>
+            <input class="controllers" type="text" name="nom" id="nomField" placeholder="nombre" autofocus required>
+          </p>
+          
+
+      </div>
+      <!-- fin campos a llenar -->
 
 
 
-    <center>
-      <font size="2" face="times roman">
-    </center>
+      <!-- <input class="buttons" type="submit" value="Contactanos"> -->
+      <font size="5" face="Arial black">
 
-    <center>
-      <table class="table table-bordered" width="6px" height="6px" alt="" style="background-color: black;">
-        <thead>
-          <tr style="border: 99px solid black;">
-            <font size="7" face="arial ">
-              <center>
-                <th>id</th>
-              </center>
-              <center>
-                <th>id_propiedad</th>
-              </center>
-
-              <center>
-                <th>tipo_propiedad</th>
-              </center>
-
-              <center>
-                <th>ubicacion</th>
-              </center>
-
-              <center>
-                <th>metros_cuadrados</th>
-              </center>
-
-              <center>
-                <th>renta_o_venta</th>
-              </center>
-
-              <center>
-                <th>precio</td>
-              </center>
-
-              <center>
-                <th>n_habitaciones</th>
-              </center>
-
-              <center>
-                <th>estado_habitaciones</th>
-              </center>
-
-              <center>
-                <th>disponible</th>
-              </center>
-              <font>
-          </tr>
-        </thead>
-
-
-        <center>
-          <tbody>
-            {% if posts %}
-            {% for info in posts %}
-            <tr>
-
-              <center>
-                <td>{{info.id}}</td>
-              </center>
-              <center>
-                <td>{{info.id_propiedad}}</td>
-              </center>
-              <center>
-                <td>{{info.tipo_propiedad}}</td>
-              </center>
-              <center>
-                <td>{{info.ubicacion}}</td>
-              </center>
-              <center>
-                <td>{{info.metros_cuadrados}}</td>
-              </center>
-              <center>
-                <td>{{info.renta_o_venta}}</td>
-              </center>
-              <center>
-                <td>{{info.precio}}</td>
-              </center>
-              <center>
-                <td>{{info.n_habitaciones}}</td>
-              </center>
-              <center>
-                <td>{{info.estado_habitaciones}}</td>
-              </center>
-              <center>
-                <td>{{info.disponible}}</td>
-              </center>
-
-
-
-          </tbody>
+        <center><button class="buttons" type="submit" onclick="datos()" style="background: #c6b1c9;"> Enviar </button>
         </center>
-        {% endfor %}
+      </font>
 
-        {% else %}
-
-        <h1>NO HAY REGISTROS</h1>
-
-        {% endif %}
-  </main>
-  </table>
-  </center>
+    </div>
 
 
+  </form>
+
+  </div>
+  <script>
+    function datos() {
+      let nombre = String(nomField.value).trim();
+
+      if (nombre.length === 0) {
+        Swal.fire({
+          title: 'Error!',
+          text: 'DATOS REQUERIDOS',
+          icon: 'error',
+          confirmButtonText: 'OK',
+          timer: 2000
+
+        });
+
+      } else {
+        $.ajax({
+          url: "{% url 'ema' %}",
+          type: "POST",
+          data: {
+
+            'nombre': $('#nomField').val(),
+            'apellidos': $('#apField').val(),
+            'fecha': $('#fecField').val(),
+            'asunto': $('#asunField').val(),
+            'correo': $('#emaiField').val(),
+            'comentarios': $('#comenField').val(),
+
+            csrfmiddlewaretoken: '{{ csrf_token }}',
+          },
+          success: function (data) {
+            console.log(data)
+            console.log("Success");
+            window.location.href = "{% url 'ema' %}";
+
+
+          },
+
+          error: function () {
+            alert('Hubo algún error al realizar la llamada AJAX!');
+          }
+        });
+
+
+
+      }
+
+
+    }
+
+
+
+
+
+
+
+
+  </script>
 </body>
-</center>
-
+<br><br><br><br><br>
 </html>
 {% endblock %}

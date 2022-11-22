@@ -8,15 +8,6 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  <script src="sweetalert2.all.min.js"></script>
-  <script src="sweetalert2.min.js"></script>
-  <link rel="stylesheet" href="sweetalert2.min.css">
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
   <title>Document</title>
 </head>
 <style>
@@ -44,198 +35,46 @@
 </style>
 
 <body>
-  <form class="register">
-    {% csrf_token %}
-
-
-    <div class="info">
-      <h1 class="titt"> Contactanos</h1>
-      <nav class="second-nav">
-        <a class="feed" href="{% url 'feed' %}">REGRESAR</a>
-
-
-      </nav>
-      <font size="6" face="Arial black">
-        <p>BIENVENIDOS</p>
-      </font>
-    </div>
-
-    <div class="elementos">
-      <!-- campos a llenar -->
-      <div class="elementosForm">
-        <font size="5" face="Arial">
-          <label class="etiquetaForm"></label>
-          <input class="controllers" type="hidden" name="user" id="userField" placeholder="Ingrese su usuario" autofocus
-            required>
-          </p>
-        </font>
-        <font size="5" face="Arial black">
-          <p>
-            <label class="etiquetaForm">id propiedad</label>
-            <input class="controllers" type="text" name="asa" id="asaField" placeholder="numero de la propieda"
-              autofocus required>
-          </p>
-        </font>
-        <font size="5" face="Arial black">
-          <p>
-            <label class="etiquetaForm">tipo propiedad</label>
-            <input class="controllers" type="text" name="a" id="aField" placeholder="tipo de propiedad" autofocus
-              required>
-          </p>
-        </font>
-
-        <font size="5" face="Arial black">
-          <p>
-            <label class="etiquetaForm">ubicacion</label>
-            <input class="controllers" type="text" name="b" id="bField" placeholder="ubicacion" autofocus required>
-          </p>
-        </font>
-
-        <font size="5" face="Arial black">
-          <p>
-            <label class="etiquetaForm">metros cuadrados</label>
-            <input class="controllers" type="text" name="c" id="cField" placeholder="metros cuadrados" autofocus
-              required>
-          </p>
-        </font>
-
-        <font size="5" face="Arial black">
-          <p>
-            <label class="etiquetaForm">renta o venta</label>
-            <input class="controllers" type="text" name="d" id="dField" placeholder="renta o venta" autofocus required>
-          </p>
-        </font>
-
-        <font size="5" face="Arial black">
-          <p>
-            <label class="etiquetaForm">precio</label>
-            <input class="controllers" type="text" name="e" id="eField" placeholder="precio" autofocus required>
-          </p>
-        </font>
-
-        <font size="5" face="Arial black">
-
-          <p>
-            <label class="etiquetaForm">n habitaciones</label>
-            <input class="controllers" type="text" name="f" id="fField" placeholder="numero de habitacion" autofocus
-              required>
-          </p>
-        </font>
-
-        <font size="5" face="Arial black">
-          <p>
-            <label class="etiquetaForm">estado habitaciones</label>
-            <input class="controllers" type="text" name="g" id="gField" placeholder="estado de la habitacion" autofocus
-              required>
-          </p>
-
-          <p>
-
-            <center><label for="liderField">¿?</label></center>
-            <center><select name="disponible" id="liderField"></center>
-            <center>
-              <option value="True">Si</option>
-            </center>
-            <center>
-              <option value="False">No</option>
-            </center>
-
-            </select>
-
-
-
-          </p>
-
-      </div>
-
-
-      <!-- <input class="buttons" type="submit" value="Contactanos"> -->
-      <center><button class="buttons" type="submit" onclick="datos()" style="background: #c6b1c9;"> Enviar </button>
-
-
-    </div>
-
-
-  </form>
-  <br><br>
-  <br>
-
-  </div>
-
-  <script>
-
-
-
-    function datos() {
-
-      let nombre = String(asaField.value).trim();
-
-      if (nombre.length === 0) {
-        Swal.fire({
-          title: 'Error!',
-          text: 'DATOS REQUERIDOS',
-          icon: 'error',
-          confirmButtonText: 'OK',
-          timer: 2000
-
-
-        });
-      } else {
-        $.ajax({
-          url: "{% url 'contacto' %}",
-          type: "POST",
-          data: {
-
-            'usuario': $('#userField').val(),
-            'id_propiedad': $('#asaField').val(),
-            'tipo_propiedad': $('#aField').val(),
-            'ubicacion': $('#bField').val(),
-            'metros_cuadrados': $('#cField').val(),
-            'renta_o_venta': $('#dField').val(),
-            'precio': $('#eField').val(),
-            'n_habitaciones': $('#fField').val(),
-            'estado_habitaciones': $('#gField').val(),
-            'disponible': $('#liderField').val(),
-
-            csrfmiddlewaretoken: '{{ csrf_token }}',
-          },
-          success: function (data) {
-            console.log(data)
-            console.log("Success");
-            window.location.href = "{% url 'contacto' %}";
-
-
-          },
-
-          error: function () {
-            alert('Hubo algún error al realizar la llamada AJAX!');
-          }
-        });
-
-
-
-      }
-
-
-
-
-
-
-    }
-
-  </script>
-
-  <script>
-
-    const $register = document.getElementById('register');
-
-    const $asaField = document.getElementById('asaField');
-
-
-
-
-  </script>
+  <center>
+    <h2>QUIENES SOMOS</h2>
+</center>
+<center>
+    <p> Flash systems es una compañía dedicada al campo de las redes y sistemas que proporciona apoyo de año nivel en
+        servicio al cliente, comunicaciones especializadas avanzadas.
+    </p>
+</center>
+<br>
+<center>
+    <h2>VISION</h2>
+</center>
+<center>
+    <p>Somos una empresa vinculada al mercado de las redes que ofrece soluciones innovadoras e integrales, que
+        reconocen
+        a los altos estandáres de calidad y excelencia del servicio.
+    </p>
+</center>
+<br>
+<center>
+    <h2>MISION</h2>
+</center>
+<center>
+    <p>Proveer soluciones tecnológicas en servicios de instalación, configuración, implementación y mantenimiento de
+        redes, garantizando la confiabilidad y la calidad en los servicios que prestamos a nuestros clientes.
+    </p>
+</center>
+<br>
+<center>
+    <h2>VALORES</h2>
+</center>
+<center>
+    <p>Compromiso, integridad, ética, satisfacción al cliente, innovaciòn y responsabilidad.
+    </p>
+</center>
+<br>
 </body>
+<br>
+<br>
+<br>
 <br>
 
 

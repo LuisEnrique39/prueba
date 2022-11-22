@@ -15,11 +15,15 @@
 			align-items: center;
 			border: 10em;
 			background: #fafafa;
-		}
+		}		
+input{
+	background: aqua;
+}
 		hr {
 			background: white;
 			border: white;
 		}
+
 	</style>
 	{% csrf_token %}
 	{{ form.as_p }}

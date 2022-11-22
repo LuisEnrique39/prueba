@@ -40,7 +40,7 @@ img {
 
 /* Nav bar */
 .main-head {
-  background: #f5ebf5;
+  background: aqua;
 
   ;
 }
@@ -49,7 +49,7 @@ nav.main {
   display: flex;
   width: 100%;
   margin: auto;
-  background-color:#f5ebf5;
+  background-color: aqua;
 }
 
 nav.main ul {
@@ -60,12 +60,12 @@ nav.main ul {
   list-style: none;
 }
 
-#logo {
+
+
+/* #logo {
   flex: 2 1 40rem;
   background-color: #f5ebf5;
-}
-
-/* -----*/
+} */
 
 a {
   font-size: .93rem;

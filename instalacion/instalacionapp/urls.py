@@ -12,13 +12,10 @@ urlpatterns = [
     re_path('^register/$' , views.registro, name="registro"),
     re_path('^login/$' , LoginView.as_view(template_name='social/login.html'), name="login"),
     re_path('^logout/$' , LogoutView.as_view(template_name='social/logout.html'), name="logout"),
-    re_path('^contacto/$' , views.contacto, name="contacto"),
-    re_path('^acceso/$' , views.retorno, name="prueba"),
-    re_path('^carrusel/$' , views.carrusel, name="carrusel"),
-    re_path('^consultas/$' , views.consulta, name="consul"),
-    re_path('^correo/$' , views.correo, name="ema"),
-    re_path('^tienda/$' , views.compras, name="tienda"),
-    re_path('^consulta/$' , views.consultati, name="consultatienda"),
-    path(r'^consulta/<str:username>/', views.consultati, name='consultatienda'),
+    re_path('^filosofia/$' , views.contacto, name="contacto"),
+    re_path('^index/$' , views.retorno, name="prueba"),
+    re_path('^asistencia/$' , views.consulta, name="consul"),
+    re_path('^directorio/$' , views.correo, name="ema"),
+    re_path('^contactanos/$' , views.compras, name="tienda"),
   
 ]
