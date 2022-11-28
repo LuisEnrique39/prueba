@@ -50,3 +50,8 @@ class Quejas(models.Model):
 class Contrata(models.Model):
     numero = models.FloatField(max_length=10, null=True)
     descripcion3 = models.CharField(max_length=250, null=True)
+
+class Contacto(models.Model):
+    Nombre = models.FloatField(max_length=20, null=True)
+    email = models.CharField(max_length=30, null=True)
+    mensaje = models.CharField(max_length=250, null=True)

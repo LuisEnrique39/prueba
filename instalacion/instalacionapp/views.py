@@ -54,26 +54,7 @@ def retorno(request):
     return render(request, 'social/prueba.html')
 
 
-def contacto(request):
-    template = 'instalacionapp/contacto.html'
-    if request.method == 'POST':
 
-        dato = Post.objects.create(
-
-            user_id=request.POST['usuario'],
-            id_propiedad=request.POST['id_propiedad'],
-            tipo_propiedad=request.POST['tipo_propiedad'],
-            ubicacion=request.POST['ubicacion'],
-            metros_cuadrados=request.POST['metros_cuadrados'],
-            renta_o_venta=request.POST['renta_o_venta'],
-            precio=request.POST['precio'],
-            n_habitaciones=request.POST['n_habitaciones'],
-            estado_habitaciones=request.POST['estado_habitaciones'],
-            disponible=request.POST['disponible'],
-
-        )
-        dato.save()
-    return render(request, 'social/contacto.html')
 def inicio(request):
 
     return render(request, 'social/inicio.html')
@@ -81,6 +62,7 @@ def inicio(request):
 def filosofia(request):
 
     return render(request, 'social/filosofia.html')
+    
 def dudas(request):
     template = 'instalacionapp/dudas.html'
     if request.method == 'POST':
@@ -123,26 +105,7 @@ def contrata(request):
   
     return render(request, 'social/contrata.html')
 
+def directorio(request):
 
-def consulta(request):
+    return render(request, 'social/directorio.html')
 
-    info = Post.objects.all()
-
-    context = {'posts': info}
-
-    return render(request, 'social/consul.html', context)
-
-
-
-
-
-
-def consultati(request, username=None):
-    ejemplo = tienda.objects.all()
-
-    current_user = request.user
-    if username and username != current_user.username:
-        user = User.objects.get(username=username)
-    else:
-        user = current_user
-    return render(request, 'social/consultatienda.html', {'user': user, 'ejemplo': ejemplo})

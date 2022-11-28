@@ -40,8 +40,7 @@ img {
 
 /* Nav bar */
 .main-head {
-  background: #f5ebf5;
-
+  background: #b2ffff
   ;
 }
 
@@ -51,7 +50,7 @@ nav.main {
   margin: auto;
    align-items: left;
   list-style: none;
-  background-color:#f5ebf5;
+  background-color:#b2ffff;
   
 }
 
