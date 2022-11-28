@@ -5,14 +5,12 @@ table {
     border: 1px solid #000;
  }
 
-body{
-   background-color: red;
-}
+
  th, td {
     width: 25%;
     text-align: left;
     vertical-align: top;
-    border: 1px solid rebeccapurple;
+    border: 1px solid white;
  }
 
 
@@ -26,4 +24,15 @@ body{
  img {
    margin: auto;
    display: block;
+   }
+   .footer {
+      background: #f5EBf5;
+      text-align: center;
+      margin-top: auto;
+      position: absolute;
+      width: 100%;
+   }
+
+   a {
+      color: black;
    }
