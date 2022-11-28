@@ -25,3 +25,14 @@ table {
    margin: auto;
    display: block;
    }
+   .footer {
+      background: #f5EBf5;
+      text-align: center;
+      margin-top: auto;
+      position: absolute;
+      width: 100%;
+   }
+
+   a {
+      color: black;
+   }

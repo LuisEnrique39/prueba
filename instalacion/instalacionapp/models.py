@@ -38,3 +38,15 @@ class tienda(models.Model):
     numero = models.CharField(max_length=250, null=True, unique=False)
     pago = models.BooleanField(default=False,null=True)
     total = models.IntegerField()
+
+class Dudas(models.Model):
+    nombre = models.CharField(max_length=250, null=True)
+    descripcion = models.CharField(max_length=250, null=True)
+
+class Quejas(models.Model):
+    nombre2 = models.CharField(max_length=250, null=True)
+    descripcion2 = models.CharField(max_length=250, null=True)
+
+class Contrata(models.Model):
+    numero = models.FloatField(max_length=10, null=True)
+    descripcion3 = models.CharField(max_length=250, null=True)

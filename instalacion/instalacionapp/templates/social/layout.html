@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-{% load static %}
+{% load static%}
 <html>
 
 <head>
-	<title>Prueba con Django</title>
+	<title>FLASH SYSTEMS</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="{% static 'styles/normalize.css' %}">
@@ -21,19 +21,26 @@
 			position: absolute;
 			width: 100%;
 		}
-		a{
+
+		a {
 			color: black;
+			face: arial;
+		}
+
+		img{
+			float: left;
 		}
 	</style>
 	<header>
 
 		<nav class="main">
-			<h1 id="logo"></h1>
+			<h1 id="logo"><img src="{% static 'img/1.png' %}" width="100px" height="100px"></h1>
 			<ul>
 
 				{% if request.user.is_authenticated %}
 
-
+				<li></li>
+				
 				<li><a href="{% url 'logout' %}">Logout</a></li>
 				{% else %}
 
@@ -69,7 +76,7 @@
 			{% if user.is_superuser == True %}
 
 
-			<a class="feed" href="{% url 'feed ' %}">Inicio</a>
+			<a class="feed" href="{% url 'feed' %}">Inicio</a>
 
 
 
@@ -80,14 +87,15 @@
 			<a class="new" href="{% url 'contacto' %}">datos</a>
 
 			{% else %}
-			<a class="new" href="{% url 'carrusel' %}">carrusel</a>
+			<a class="new" href="{% url 'inicio' %}">inicio</a>
+			<a class="new" href="{% url 'filosofia' %}">filosofia</a>
+			<a class="new" href="{% url 'dudas' %}">dudas</a>
+			<a class="new" href="{% url 'quejas' %}">quejas</a>
+			<a class="new" href="{% url 'contrata' %}">contrata</a>
+
 			<a class="new" href="{% url 'contacto' %}">contacto</a>
 
 			<a class="new" href="{% url 'consul' %}">consulta</a>
-
-			<a class="new" href="{% url 'ema' %}">email</a>
-
-			<a class="new" href="{% url 'tienda' %}">Tienda</a>
 
 			<a class="new" href="{% url 'consultatienda' user.username %}">Consulta Tienda</a>
 
@@ -109,7 +117,7 @@
 
 	</div>
 
-	<footer class="footer text-faded text-center py-5">
+	<footer class="footer">
 		<div class="container">
 			<p class="m-0">
 				<a href="#" class="link">
@@ -131,23 +139,22 @@
 					</span>
 				</a>
 			</p>
-			<a href="{% url 'ema' %}">
-				<center> <button type="button" >Contactanos</button>
+			<a href="">
+				<center> <button type="button">Contactanos</button>
 				</center>
 			</a>
 
-			<p class="m-0 mbt">
+			<p>
 				<center>
-					<font>
-		
-						<a href="sample.html" class="link">   Luis</a>  ·
-					<a href="sample.html" class="link">   Aviso legal   </a> ·
-						<a href="sample.html" class="link">   Cookies   </a> ·
-					</font>
+
+
+					<a href="#" class="link"> FLASH SYSTEMS</a> ·
+
+
 				</center>
 
 			</p>
-			<p class="m-0 mbt1">&copy; luis</p>
+			<p class="m-0 mbt1">&copy; </p>
 		</div>
 	</footer>
 </body>

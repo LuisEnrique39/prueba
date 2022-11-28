@@ -1,0 +1,72 @@
+{% extends 'social/layout.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .prueba {
+            background-color: #199319;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main style="background-color: white;  height: 70em;">
+        <div class="info">
+            <center><a class="prueba" href="{% url 'feed' %}">REGRESAR</a></center>
+            <br>
+            <center>
+                <h1 class="titt"> FILOSOFIA</h1>
+            </center>
+            <center>
+                <nav class="info"></nav>
+            </center>
+            </nav>
+        </div>
+        <center>
+            <div>
+                <h1> QUIENES SOMOS</h1>
+                <P>
+
+                    Flashsystems es una compañía dedicada al campo de las redes y sistemas que proporciona apoyo de año
+                    nivel en servicio al cliente, comunicaciones especializadas avanzadas.
+
+                </P>
+                <h1>VISION </h1>
+                <P>
+
+                    Somos una empresa vinculada al mercado de las redes que ofrece soluciones innovadoras e integrales,
+                    que reconocen a los altos estandáres de calidad y excelencia del servicio.
+
+                </P>
+                <h1>MISION </h1>
+                <P>
+
+                    Proveer soluciones tecnológicas en servicios de instalación, configuración, implementación y
+                    mantenimiento de redes, garantizando la confiabilidad y la calidad en los servicios que prestamos a
+                    nuestros clientes.
+
+                </P>
+                <h1> VALORES </h1>
+                <P>
+
+                    Compromiso, integridad, ética, satisfacción al cliente, innovaciòn y responsabilidad.
+
+                </P>
+            </div>
+        </center>
+</body>
+
+</html>
+{% endblock %}

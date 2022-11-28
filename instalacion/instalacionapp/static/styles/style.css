@@ -49,20 +49,22 @@ nav.main {
   display: flex;
   width: 100%;
   margin: auto;
+   align-items: left;
+  list-style: none;
   background-color:#f5ebf5;
+  
 }
 
 nav.main ul {
   display: flex;
   flex: 1 1 40rem;
   justify-content: space-around;
-  align-items: center;
+  align-items: left;
   list-style: none;
 }
 
 #logo {
   flex: 2 1 40rem;
-  background-color: #f5ebf5;
 }
 
 /* -----*/
