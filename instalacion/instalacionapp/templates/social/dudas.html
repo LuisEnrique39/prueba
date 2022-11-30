@@ -37,16 +37,18 @@
     -moz-border-radius: 9px;
     -webkit-border-radius: 3000px;
     border-radius: 3000px;
-    border: 1px solid #000000;
+    border: .1px solid #000000;
     padding: 0 4px 0 4px;
   }
-.prueba{
-  background-color: #199319;
-  color: white;
-  padding: 10px 15px;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;}
+  .prueba {
+    background-color: #b2ffff;
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+  }
 </style>
 
 <body>
@@ -54,10 +56,10 @@
     {% csrf_token %}
 
 
-    <div class="info">
-      <h1 class="titt"> DUDAS</h1>
+    <div class="info">        <center><a class="prueba" href="{% url 'feed' %}">REGRESAR</a></center>
+
+      <center><h1 class="titt"> DUDAS</h1></center>
       <nav class="info">
-        <center><a class="prueba" href="{% url 'feed' %}">REGRESAR</a></center>
       </nav>
   
     </div>
@@ -85,7 +87,7 @@
 
 
       <!-- <input class="buttons" type="submit" value="Contactanos"> -->
-      <center><button class="buttons" type="submit" onclick="datos()" style="background: #c6b1c9;"> Enviar </button>
+      <center><button class="buttons" type="submit" onclick="datos()" style="background: #b2ffff; color:#000000;"> Enviar </button>
 
 
     </div>

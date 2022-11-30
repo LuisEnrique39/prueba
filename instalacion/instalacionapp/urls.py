@@ -17,10 +17,8 @@ urlpatterns = [
     re_path('^dudas/$' , views.dudas, name="dudas"), 
     re_path('^quejas/$' , views.quejas, name="quejas"),
     re_path('^contrata/$' , views.contrata, name="contrata"),
-    re_path('^contacto/$' , views.contacto, name="contacto"),
-    re_path('^consultas/$' , views.consulta, name="consul"),
-    re_path('^consulta/$' , views.consultati, name="consultatienda"),
-    path(r'^consulta/<str:username>/', views.consultati, name='consultatienda'),
+    re_path('^directorio/$' , views.directorio, name="directorio"),
+  
 
 
 ]

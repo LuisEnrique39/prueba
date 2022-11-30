@@ -1,0 +1,55 @@
+{% extends 'social/layout.html' %}
+{% block content%}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+     .prueba {
+    background-color: #b2ffff;
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+    <center><a class="prueba" href="{% url 'feed' %}">REGRESAR</a></center>
+    <center>
+<div>
+    <p>EQUIPO DE TRABAJO</p>
+
+    <p>SOMOS UN EQUIPO DE TRABAJO QUE BRINDA SOLUCIONES A NUESTROS CLIENTES</p>
+
+    <p>NUESTRAS AREAS DE TRABAJO SON</p>
+
+    <p> SERVICIOS DE TELEFONIA</p>
+
+    <p>CONSULTORIA </p>
+
+    <p> VENTAS</p>
+
+    <p>SERVICIO TECNICO</p>
+
+    <p>TELEFONOS</p>
+
+    <p>5677237277 <br><br> 5577237278</p>
+
+
+    <p> CORREO ELECTRÓNICO</p>
+
+    <p>Flashsystems@gmail.com</p></div></center>
+    <img src="{% static 'img/is.png' %}" width="100px" height="100px"></h1>
+</body>
+
+</html>
+{% endblock %}
