@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-tuk4)&auwzugv=5z#(5*vd$aub@*d34f#=2rk9aa%klltd(3m_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['18.188.80.136','localhost','*']
 
 
 # Application definition
@@ -79,7 +79,7 @@ WSGI_APPLICATION = "instalacion.wsgi.application"
 DATABASES = {
 'default': {
 'ENGINE': 'django.db.backends.postgresql', 'NAME': 'tesca',
-'USER': 'postgres',
+'USER': 'postgresql',
  'PASSWORD': 'luisenrique', 
  'HOST': '127.0.0.1',
 'PORT': '5432',
